@@ -1,6 +1,6 @@
 import type { IconType } from "react-icons";
 import {
-  SiAmazonaws,
+  SiAmazonwebservices,
   SiAnthropic,
   SiDocker,
   SiExpress,
@@ -12,6 +12,7 @@ import {
   SiMysql,
   SiNodedotjs,
   SiNextdotjs,
+  SiNestjs,
   SiOpenai,
   SiPostgresql,
   SiPrisma,
@@ -34,7 +35,7 @@ const logos: Logo[] = [
   { name: "TypeScript", Icon: SiTypescript },
   { name: "JavaScript", Icon: SiJavascript },
   { name: "Node.js", Icon: SiNodedotjs },
-  { name: "AWS", Icon: SiAmazonaws },
+  { name: "AWS", Icon: SiAmazonwebservices },
   { name: "Python", Icon: SiPython },
   { name: "PostgreSQL", Icon: SiPostgresql },
   { name: "MySQL", Icon: SiMysql },
@@ -46,6 +47,7 @@ const logos: Logo[] = [
   { name: "Anthropic", Icon: SiAnthropic },
   { name: "Heroku", Icon: SiHeroku },
   { name: "Express", Icon: SiExpress },
+  { name: "NestJS", Icon: SiNestjs },
   { name: "Docker", Icon: SiDocker },
   { name: "Vercel", Icon: SiVercel },
   { name: "Git", Icon: SiGit },
