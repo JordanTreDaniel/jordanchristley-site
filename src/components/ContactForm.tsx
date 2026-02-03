@@ -105,15 +105,15 @@ export default function ContactForm({
           >
             {cta}
           </button>
-          <p
-            className={`text-xs ${styles.subtle}`}
-            aria-live="polite"
-            role="status"
-          >
-            {submitted
-              ? "Thanks! Your message is queued — I will wire up delivery soon."
-              : note || "No email is configured yet. This form is ready to wire."}
-          </p>
+          {(submitted || note) && (
+            <p
+              className={`text-xs ${styles.subtle}`}
+              aria-live="polite"
+              role="status"
+            >
+              {submitted ? "Thanks! I'll get back to you soon." : note}
+            </p>
+          )}
         </div>
       </form>
     </div>
