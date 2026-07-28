@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { FiCpu, FiLayers, FiPenTool, FiShield, FiZap } from "react-icons/fi";
 import ContactForm from "@/components/ContactForm";
 import LogoCloud from "@/components/LogoCloud";
 import JourneyPage from "@/components/JourneyPage";
+import PortfolioCard from "@/components/PortfolioCard";
 
 export const metadata: Metadata = {
   title: "Emerald Technology Consulting",
@@ -76,82 +76,24 @@ export default function EmeraldTechPage() {
           </p>
           <h2 className="mt-3 text-2xl font-semibold">Recent Work</h2>
           <p className="mt-2 text-sm text-emerald-100/70">
-            Projects that demonstrate our approach to design, development, and
-            delivery.
+            Immersive, high-craft projects that demonstrate our approach to
+            design, development, and delivery.
           </p>
 
-          <div className="mt-6 overflow-hidden rounded-3xl border border-emerald-300/15 bg-emerald-950/40 shadow-lg shadow-emerald-900/30">
-            <div className="flex items-center gap-2 border-b border-emerald-300/10 bg-emerald-950/60 px-4 py-2.5">
-              <div className="flex gap-1.5">
-                <div className="h-3 w-3 rounded-full bg-red-500/60" />
-                <div className="h-3 w-3 rounded-full bg-yellow-500/60" />
-                <div className="h-3 w-3 rounded-full bg-green-500/60" />
-              </div>
-              <div className="mx-3 flex-1">
-                <div className="rounded-full bg-emerald-950/80 px-3 py-1 text-xs text-emerald-200/50 truncate">
-                  pawparadise-journey.higgsfield.app
-                </div>
-              </div>
-            </div>
-            <a
-              href="https://pawparadise-journey.higgsfield.app/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group relative block overflow-hidden"
-            >
-              <picture>
-                <source
-                  media="(max-width: 768px)"
-                  srcSet="/pawparadise-mobile.png"
-                />
-                <img
-                  src="/pawparadise-desktop.png"
-                  alt="Paw Paradise — A Day in the Life journey site preview"
-                  className="block w-full border-0"
-                  loading="lazy"
-                />
-              </picture>
-              <div className="absolute inset-0 flex items-center justify-center bg-emerald-950/60 opacity-0 transition-opacity group-hover:opacity-100">
-                <span className="rounded-full border border-emerald-300/50 bg-emerald-950/80 px-6 py-2 text-sm text-emerald-200">
-                  Open Live Site
-                </span>
-              </div>
-            </a>
-          </div>
-
-          <div className="mt-4 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-            <div>
-              <h3 className="font-semibold text-emerald-100">
-                Paw Paradise Journey
-              </h3>
-              <p className="mt-0.5 text-sm text-emerald-100/70">
-                Immersive scroll-driven journey site for a pet care brand —
-                built with video flythrough, interactive cards, and a handoff
-                form.
-              </p>
-            </div>
-            <a
-              href="https://pawparadise-journey.higgsfield.app/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex shrink-0 items-center gap-2 rounded-full border border-emerald-300/30 px-4 py-2 text-sm text-emerald-200/80 transition hover:border-emerald-200/50 hover:bg-emerald-950/40"
-            >
-              View Live Site
-              <svg
-                width="16"
-                height="16"
-                viewBox="0 0 16 16"
-                fill="none"
-              >
-                <path
-                  d="M3 8h10M9 4l4 4-4 4"
-                  stroke="currentColor"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </a>
+          <div className="mt-8">
+            <PortfolioCard
+              title="Paw Paradise Journey"
+              description="Scroll-driven journey site for a pet care brand. Built with AI-generated video flythrough, interactive flash cards, and a polished handoff form — all in a single continuous scroll experience."
+              imageSrc="/pawparadise-preview.png"
+              liveUrl="https://pawparadise-journey.higgsfield.app/"
+              tags={[
+                "Next.js",
+                "Framer Motion",
+                "AI Video",
+                "Scroll-Scrub",
+                "Cloudflare Workers",
+              ]}
+            />
           </div>
         </section>
 
