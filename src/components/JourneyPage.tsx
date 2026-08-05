@@ -1,8 +1,8 @@
 "use client";
 
-import { useEffect, useRef, useState, useCallback } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { FiMenu, FiX, FiChevronDown } from "react-icons/fi";
+import { FiMenu, FiX } from "react-icons/fi";
 
 interface JourneyScene {
   id: number;
@@ -11,77 +11,102 @@ interface JourneyScene {
   subtext: string;
   tags: string[] | null;
   videoSrc: string;
+  mobileVideoSrc: string;
   posterSrc: string;
-}
-
-interface FlashCard {
-  title: string;
-  summary: string;
-  icon: string;
 }
 
 const scenes: JourneyScene[] = [
   {
     id: 1,
     name: "The Overwhelm",
-    headline: "Make more money with technology",
-    subtext: "Cut through the noise. Let's build your path.",
-    tags: null,
+    headline: "Everything takes forever.",
+    subtext: "This is your day before the glow shows up.",
+    tags: ["Wilderness", "Overwhelm"],
     videoSrc: "/scenes/scene-01.mp4",
+    mobileVideoSrc: "/scenes/scene-01-mobile.mp4",
     posterSrc: "/scenes/scene-01-poster.png",
   },
   {
     id: 2,
-    name: "The Gems",
-    headline: "Where are you losing time?",
-    subtext: "Click a gem to explore your path.",
-    tags: ["AI Foundations", "Notes & Systems", "Automation", "Custom AI"],
+    name: "A Glow in the Dark",
+    headline: "Then something changes.",
+    subtext: "Help doesn't come as a lightning bolt. It comes as a little glow.",
+    tags: ["Wilderness", "The Mascot"],
     videoSrc: "/scenes/scene-02.mp4",
+    mobileVideoSrc: "/scenes/scene-02-mobile.mp4",
     posterSrc: "/scenes/scene-02-poster.png",
   },
   {
     id: 3,
-    name: "The Door",
-    headline: "Let's find clarity together",
-    subtext: "Start your journey. Reach out today.",
-    tags: null,
+    name: "Step Through",
+    headline: "Step through.",
+    subtext: "The messy world ends at this curtain.",
+    tags: ["The Portal", "Fruit-Rain"],
     videoSrc: "/scenes/scene-03.mp4",
+    mobileVideoSrc: "/scenes/scene-03-mobile.mp4",
     posterSrc: "/scenes/scene-03-poster.png",
+  },
+  {
+    id: 4,
+    name: "Everything Just Works",
+    headline: "Everything just… works.",
+    subtext: "The scroll of a mountain of tablets? Gone. The fire? Already lit.",
+    tags: ["Paradise", "Midpoint"],
+    videoSrc: "/scenes/scene-04.mp4",
+    mobileVideoSrc: "/scenes/scene-04-mobile.mp4",
+    posterSrc: "/scenes/scene-04-poster.png",
+  },
+  {
+    id: 5,
+    name: "The New You",
+    headline: "Meet the new you.",
+    subtext: "Same you. Kempt, equipped, and everything running itself.",
+    tags: ["Paradise", "The New You"],
+    videoSrc: "/scenes/scene-05.mp4",
+    mobileVideoSrc: "/scenes/scene-05-mobile.mp4",
+    posterSrc: "/scenes/scene-05-poster.png",
+  },
+  {
+    id: 6,
+    name: "Your Turn",
+    headline: "This world is yours.",
+    subtext: "From overwhelm to 'it just works' — let's build your way in.",
+    tags: ["Paradise", "Your Turn"],
+    videoSrc: "/scenes/scene-06.mp4",
+    mobileVideoSrc: "/scenes/scene-06-mobile.mp4",
+    posterSrc: "/scenes/scene-06-poster.png",
   },
 ];
 
-const flashCards: FlashCard[] = [
-  {
-    title: "AI Foundations",
-    summary: "ChatGPT, Claude, and the basics of working with AI. From asking questions to custom prompts.",
-    icon: "C",
-  },
-  {
-    title: "Notes & Systems",
-    summary: "Notion, SOPs, and documenting your business so it can scale without you.",
-    icon: "N",
-  },
-  {
-    title: "Automation",
-    summary: "Email sorting, social media scheduling, and workflow automation that saves hours every day.",
-    icon: "A",
-  },
-  {
-    title: "Custom AI",
-    summary: "AI agents, MCPs, skills, and connecting AI to your tools and data.",
-    icon: "I",
-  },
-];
+const serviceChips = ["AI Foundations", "Notes & Systems", "Automation", "Custom AI"];
+
+const arrowIcon = (
+  <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+    <path
+      d="M3 8h10M9 4l4 4-4 4"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
 
 export default function JourneyPage() {
   const stageRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
+  const currentVideoIndexRef = useRef(-1);
   const [activeScene, setActiveScene] = useState(0);
   const [isIOS, setIsIOS] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+  const [reducedMotion, setReducedMotion] = useState(false);
+  const [reducedProgress, setReducedProgress] = useState(0);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [expandedCard, setExpandedCard] = useState<number | null>(null);
 
-  const videoUrls = scenes.map((s) => s.videoSrc);
+  const videoUrls = useMemo(
+    () => scenes.map((s) => (isMobile ? s.mobileVideoSrc : s.videoSrc)),
+    [isMobile],
+  );
 
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -89,9 +114,41 @@ export default function JourneyPage() {
       /iPad|iPhone|iPod/.test(navigator.userAgent) ||
       (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
     setIsIOS(ios);
+  }, []);
 
-    let currentVideoIndex = -1;
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const mq = window.matchMedia("(max-width: 768px)");
+    const update = () => setIsMobile(mq.matches);
+    update();
+    mq.addEventListener("change", update);
+    return () => mq.removeEventListener("change", update);
+  }, []);
 
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const update = (e?: MediaQueryListEvent) =>
+      setReducedMotion(e ? e.matches : mq.matches);
+    update();
+    mq.addEventListener("change", update);
+    return () => mq.removeEventListener("change", update);
+  }, []);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const video = videoRef.current;
+    if (!video) return;
+    const idx = currentVideoIndexRef.current >= 0 ? currentVideoIndexRef.current : 0;
+    const scene = scenes[idx];
+    if (scene) {
+      video.src = isMobile ? scene.mobileVideoSrc : scene.videoSrc;
+      video.load();
+    }
+  }, [isMobile]);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
     const handleScroll = () => {
       if (!stageRef.current) return;
       const rect = stageRef.current.getBoundingClientRect();
@@ -99,22 +156,29 @@ export default function JourneyPage() {
       const viewportHeight = window.innerHeight;
       const scrollableHeight = totalHeight - viewportHeight;
       const scrolled = -rect.top;
-      const progress = Math.max(0, Math.min(1, scrolled / scrollableHeight));
+      const progress =
+        scrollableHeight > 0
+          ? Math.max(0, Math.min(1, scrolled / scrollableHeight))
+          : 0;
       const rawIndex = Math.min(scenes.length - 1, Math.floor(progress * scenes.length));
-      const sceneIndex = rawIndex;
-      setActiveScene(sceneIndex);
+      setActiveScene(rawIndex);
+
+      if (reducedMotion) {
+        setReducedProgress(progress);
+        return;
+      }
 
       const video = videoRef.current;
       if (!video) return;
 
-      const targetSrc = videoUrls[sceneIndex];
-      if (currentVideoIndex !== sceneIndex) {
+      const targetSrc = videoUrls[rawIndex];
+      if (currentVideoIndexRef.current !== rawIndex) {
         video.src = targetSrc;
         video.load();
-        currentVideoIndex = sceneIndex;
+        currentVideoIndexRef.current = rawIndex;
       }
 
-      const sceneProgress = progress * scenes.length - sceneIndex;
+      const sceneProgress = progress * scenes.length - rawIndex;
       if (video.duration && video.duration > 0) {
         video.currentTime = sceneProgress * video.duration;
       }
@@ -122,7 +186,7 @@ export default function JourneyPage() {
 
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [videoUrls]);
+  }, [reducedMotion, videoUrls]);
 
   const scrollToScene = (index: number) => {
     if (!stageRef.current) return;
@@ -135,23 +199,65 @@ export default function JourneyPage() {
   const scrollToBottom = () => {
     if (!stageRef.current) return;
     const totalHeight = stageRef.current.offsetHeight;
-    window.scrollTo({ top: stageRef.current.offsetTop + totalHeight, behavior: "smooth" });
+    window.scrollTo({
+      top: stageRef.current.offsetTop + totalHeight,
+      behavior: "smooth",
+    });
+    setMobileOpen(false);
   };
 
   const active = scenes[activeScene] || scenes[0];
 
+  const renderSceneBody = (scene: JourneyScene, compact: boolean) => (
+    <>
+      <h2 className="journey-headline">{scene.headline}</h2>
+      <p className="journey-subtext">{scene.subtext}</p>
+      {scene.id === 2 ? (
+        <div className="journey-service-chips">
+          {serviceChips.map((name) => (
+            <span key={name} className="journey-chip">
+              {name}
+            </span>
+          ))}
+        </div>
+      ) : (
+        scene.tags &&
+        scene.tags.length > 0 && (
+          <div className="journey-tags">
+            {scene.tags.map((tag: string) => (
+              <span key={tag} className="journey-tag">
+                {tag}
+              </span>
+            ))}
+          </div>
+        )
+      )}
+      {scene.id === 6 && (
+        <div className="mt-6 flex flex-wrap gap-4">
+          <button onClick={scrollToBottom} className="journey-cta journey-cta-primary">
+            Book a call
+            {arrowIcon}
+          </button>
+          <button onClick={scrollToBottom} className="journey-cta journey-cta-ghost">
+            See what we do
+          </button>
+        </div>
+      )}
+    </>
+  );
+
   return (
     <>
-      <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-4">
+      <nav className="journey-nav fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-4">
         <span className="text-sm font-semibold uppercase tracking-[0.3em] text-emerald-200/80">
           Emerald Technology Consulting
         </span>
-        <div className="hidden items-center gap-6 md:flex">
+        <div className="hidden items-center gap-5 lg:flex">
           {scenes.map((scene, i) => (
             <button
               key={scene.id}
               onClick={() => scrollToScene(i)}
-              className={`text-xs uppercase tracking-[0.2em] transition ${
+              className={`text-xs uppercase tracking-[0.15em] transition ${
                 i === activeScene
                   ? "text-emerald-300"
                   : "text-emerald-100/50 hover:text-emerald-100/80"
@@ -169,7 +275,7 @@ export default function JourneyPage() {
         </div>
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="z-50 flex items-center justify-center md:hidden"
+          className="z-50 flex items-center justify-center lg:hidden"
         >
           {mobileOpen ? (
             <FiX className="h-6 w-6 text-emerald-200" />
@@ -188,7 +294,7 @@ export default function JourneyPage() {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: "100%" }}
             transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-            className="fixed inset-0 z-40 flex flex-col items-center justify-center gap-8 bg-[#050a07]/95 backdrop-blur-xl"
+            className="fixed inset-0 z-40 flex flex-col items-center justify-center gap-6 bg-[#050a07]/95 backdrop-blur-xl"
           >
             <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-emerald-400/20">
               <span className="text-2xl text-emerald-300">◆</span>
@@ -198,17 +304,16 @@ export default function JourneyPage() {
                 key={scene.id}
                 onClick={() => scrollToScene(i)}
                 className={`text-lg uppercase tracking-[0.3em] transition ${
-                  i === activeScene ? "text-emerald-300" : "text-emerald-100/60 hover:text-emerald-100"
+                  i === activeScene
+                    ? "text-emerald-300"
+                    : "text-emerald-100/60 hover:text-emerald-100"
                 }`}
               >
                 {scene.name}
               </button>
             ))}
             <button
-              onClick={() => {
-                setMobileOpen(false);
-                scrollToBottom();
-              }}
+              onClick={scrollToBottom}
               className="mt-4 rounded-full border border-emerald-300/30 px-6 py-3 text-xs uppercase tracking-[0.2em] text-emerald-200"
             >
               Get in touch
@@ -217,130 +322,79 @@ export default function JourneyPage() {
         )}
       </AnimatePresence>
 
-      <div
-        ref={stageRef}
-        className="journey-stage"
-        style={{ "--scene-count": scenes.length } as React.CSSProperties}
-      >
-        <div className="journey-viewport">
-          <video
-            ref={videoRef}
-            className="journey-video"
-            muted
-            playsInline
-            preload="metadata"
-            poster={active.posterSrc}
-            onLoadedMetadata={(e) => {
-              (e.target as HTMLVideoElement).currentTime = 0;
-            }}
-          />
-          <div className="journey-overlay" />
-
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={active.id}
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-              className="journey-content"
-            >
-              {active.id === 2 ? (
-                <div className="max-w-3xl">
-                  <h2 className="journey-headline">{active.headline}</h2>
-                  <p className="journey-subtext">{active.subtext}</p>
-                  <div className="mt-8 grid gap-3 sm:grid-cols-2">
-                    {flashCards.map((card, i) => (
-                      <motion.div
-                        key={card.title}
-                        layout
-                        onClick={() => setExpandedCard(expandedCard === i ? null : i)}
-                        className="cursor-pointer rounded-2xl border border-emerald-300/15 bg-emerald-950/50 p-4 backdrop-blur-sm transition hover:border-emerald-300/30"
-                      >
-                        <div className="flex items-center gap-3">
-                          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-emerald-400/20 text-sm font-bold text-emerald-300">
-                            {card.icon}
-                          </div>
-                          <span className="text-sm font-semibold text-emerald-100">
-                            {card.title}
-                          </span>
-                          <FiChevronDown
-                            className={`ml-auto h-4 w-4 text-emerald-400/60 transition ${
-                              expandedCard === i ? "rotate-180" : ""
-                            }`}
-                          />
-                        </div>
-                        <AnimatePresence>
-                          {expandedCard === i && (
-                            <motion.div
-                              initial={{ height: 0, opacity: 0 }}
-                              animate={{ height: "auto", opacity: 1 }}
-                              exit={{ height: 0, opacity: 0 }}
-                              transition={{ duration: 0.3 }}
-                              className="overflow-hidden"
-                            >
-                              <p className="mt-3 text-sm leading-relaxed text-emerald-100/70">
-                                {card.summary}
-                              </p>
-                            </motion.div>
-                          )}
-                        </AnimatePresence>
-                      </motion.div>
-                    ))}
-                  </div>
+      {reducedMotion ? (
+        <div ref={stageRef} className="journey-stage-reduced">
+          {scenes.map((scene, i) => {
+            const d = reducedProgress * scenes.length - i;
+            const opacity = Math.max(0, Math.min(1, 1 - Math.max(0, Math.abs(d) - 0.5) * 2));
+            return (
+              <section key={scene.id} className="journey-reduced-section">
+                <img
+                  src={scene.posterSrc}
+                  alt={scene.name}
+                  className="journey-reduced-poster"
+                />
+                <div className="journey-reduced-shade" />
+                <div
+                  className="journey-reduced-content"
+                  style={{
+                    opacity,
+                    transform: `translateY(${(1 - opacity) * 24}px)`,
+                  }}
+                >
+                  <p className="journey-reduced-chapter">
+                    {i + 1} · {scene.name}
+                  </p>
+                  {renderSceneBody(scene, true)}
                 </div>
-              ) : (
-                <>
-                  <h2 className="journey-headline">{active.headline}</h2>
-                  <p className="journey-subtext">{active.subtext}</p>
-                  {active.tags && active.tags.length > 0 && (
-                    <div className="journey-tags">
-                      {active.tags.map((tag: string) => (
-                        <span key={tag} className="journey-tag">
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-                  )}
-                  <div className="mt-6 flex gap-4">
-                    {active.id === 3 && (
-                      <button
-                        onClick={scrollToBottom}
-                        className="journey-cta journey-cta-primary"
-                      >
-                        Let's talk
-                        <svg
-                          width="16"
-                          height="16"
-                          viewBox="0 0 16 16"
-                          fill="none"
-                        >
-                          <path
-                            d="M3 8h10M9 4l4 4-4 4"
-                            stroke="currentColor"
-                            strokeWidth="1.5"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                          />
-                        </svg>
-                      </button>
-                    )}
-                  </div>
-                </>
-              )}
-            </motion.div>
-          </AnimatePresence>
+              </section>
+            );
+          })}
+        </div>
+      ) : (
+        <div
+          ref={stageRef}
+          className="journey-stage"
+          style={{ "--scene-count": scenes.length } as React.CSSProperties}
+        >
+          <div className="journey-viewport">
+            <video
+              ref={videoRef}
+              className="journey-video"
+              muted
+              playsInline
+              preload="metadata"
+              poster={active.posterSrc}
+              onLoadedMetadata={(e) => {
+                (e.target as HTMLVideoElement).currentTime = 0;
+              }}
+            />
+            <div className="journey-overlay" />
 
-          <div className="journey-indicators">
-            {scenes.map((scene, i) => (
-              <div
-                key={scene.id}
-                className={`journey-indicator ${i === activeScene ? "active" : ""}`}
-              />
-            ))}
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={active.id}
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+                className="journey-content"
+              >
+                {renderSceneBody(active, false)}
+              </motion.div>
+            </AnimatePresence>
+
+            <div className="journey-indicators">
+              {scenes.map((scene, i) => (
+                <div
+                  key={scene.id}
+                  className={`journey-indicator ${i === activeScene ? "active" : ""}`}
+                />
+              ))}
+            </div>
           </div>
         </div>
-      </div>
+      )}
     </>
   );
 }

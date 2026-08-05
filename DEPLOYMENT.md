@@ -52,6 +52,12 @@ Add 3 more A records with these IPs:
 - Value: `jordanchristley.github.io` (or your GitHub username/repo)
 - TTL: 3600
 
+### DNS Records for Custom Domain — Lessons Learned
+
+- **The 4 A records are for GitHub Pages, not Zoho.** The apex (`@`) records pointing to `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, and `185.199.111.153` are GitHub's IPs for resolving `jordanchristley.com`. Deleting them breaks the site.
+- **Leave the `www` CNAME alone.** The `www` CNAME pointing to `jordanchristley.github.io.` is also GitHub's — do not touch it.
+- **Always verify before deleting.** Check [GitHub's custom domain docs](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site) before removing any DNS record. GitHub's IPs look generic and are easy to mistake for other services.
+
 ### 5. Wait for DNS Propagation
 
 - DNS changes can take 24-48 hours, but usually propagate within a few hours
