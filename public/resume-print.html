@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Resume — Jordan Christley</title>
+<style>
+  :root { --ink: #111; --rule: #111; --link: #1a4f8b; --muted: #333; }
+  @page { size: letter; margin: 0; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: "Georgia", "Times New Roman", "Latin Modern Roman", serif;
+    color: var(--ink);
+    font-size: 10.5pt;
+    line-height: 1.35;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .page {
+    width: 8.5in;
+    min-height: 11in;
+    padding: 0.5in 0.6in;
+    margin: 0 auto;
+    background: #fff;
+  }
+
+  /* ── Header ─────────────────────────────────── */
+  header { margin-bottom: 10px; }
+  header h1 { font-size: 26pt; font-weight: 700; letter-spacing: -0.3px; }
+  header .title { font-size: 11pt; color: var(--muted); margin-top: 2px; font-style: italic; }
+  header .contact {
+    font-size: 9.5pt;
+    margin-top: 4px;
+    border-bottom: 1.2px solid var(--rule);
+    padding-bottom: 8px;
+    line-height: 1.5;
+  }
+  header .contact a { color: var(--link); text-decoration: underline; }
+  header .contact .sep { color: #888; margin: 0 5px; }
+
+  /* ── Section headings ───────────────────────── */
+  h2 {
+    font-size: 11.5pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 1.2px solid var(--rule);
+    padding-bottom: 2px;
+    margin: 12px 0 6px;
+  }
+
+  /* ── Entry (job / project / education) ──────── */
+  .entry { margin-bottom: 8px; }
+  .entry .l1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+  .entry .l1 .org { font-weight: 700; }
+  .entry .l1 .date { font-weight: 700; white-space: nowrap; }
+  .entry .l2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-style: italic;
+    color: var(--muted);
+    font-size: 10pt;
+  }
+  .entry .desc {
+    font-size: 10pt;
+    color: var(--muted);
+    margin-top: 2px;
+  }
+
+  /* ── Lists ──────────────────────────────────── */
+  ul { list-style: none; margin-top: 2px; }
+  ul li {
+    padding-left: 14px;
+    position: relative;
+    margin-bottom: 1.5px;
+  }
+  ul li::before { content: "•"; position: absolute; left: 2px; }
+
+  /* ── Skills (compact inline) ────────────────── */
+  .skills-list li { margin-bottom: 3px; }
+
+  a { color: var(--link); text-decoration: underline; }
+
+  @media print {
+    body { background: #fff; }
+    .page { padding: 0.45in 0.55in; min-height: auto; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header>
+    <h1>Jordan Christley</h1>
+    <p class="title">Full-Stack AI Engineer &amp; Independent Consultant</p>
+    <div class="contact">
+      <a href="mailto:jordan@jordanchristley.com">jordan@jordanchristley.com</a><span class="sep">|</span><a href="https://linkedin.com/in/jordanchristley">linkedin.com/in/jordanchristley</a><span class="sep">|</span><a href="https://github.com/jordanchristley">github.com/jordanchristley</a><span class="sep">|</span><a href="https://jordanchristley.com">jordanchristley.com</a>
+    </div>
+  </header>
+
+  <section>
+    <h2>Summary</h2>
+    <p style="margin-top:4px; font-size:10pt;">AI-native full-stack engineer building production systems that combine LLM orchestration, autonomous agent design, and Cloudflare-native infrastructure into end-to-end business tools. Specializes in RAG pipelines, multi-agent workflow orchestration, and browser automation.</p>
+  </section>
+
+  <section>
+    <h2>Technical Skills</h2>
+    <ul class="skills-list">
+      <li><strong>Languages:</strong> Python, TypeScript, Rust, JavaScript, SQL</li>
+      <li><strong>Frontend:</strong> React, Next.js, Redux, Tailwind CSS, Playwright</li>
+      <li><strong>Backend:</strong> Node.js, NestJS, Express, FastAPI, Python APIs</li>
+      <li><strong>AI / ML:</strong> RAG Pipelines, LLM Orchestration (Claude, OpenAI), Vector Databases, Embeddings, AI Agent Design, Prompt Engineering</li>
+      <li><strong>Infrastructure:</strong> Cloudflare Workers / D1 / R2 / KV, AWS (Lambda, S3, RDS, CloudFormation), Docker, Kubernetes, Terraform, GCP</li>
+      <li><strong>Databases:</strong> PostgreSQL, SQLite / D1, Redis, Supabase, MongoDB</li>
+      <li><strong>Automation:</strong> Playwright, Puppeteer, FFmpeg, Email Automation, Notion API</li>
+      <li><strong>Domains:</strong> Real Estate Tech, CRM, SaaS, Billing / Stripe, Meeting Transcription &amp; Task Extraction</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Experience</h2>
+    
+    <div class="entry">
+      <div class="l1"><span class="org">Emerald Technology</span><span class="date">2022 — Present</span></div>
+      <div class="l2"><span>Independent Consultant</span></div>
+      <ul>
+        <li>Architected and shipped AI-powered systems combining LLM orchestration, autonomous agent design, and Cloudflare-native infrastructure for end-to-end business tooling.</li>
+        <li>Built multi-agent workflow engines with real-time collaboration, review dashboards, and automated task extraction from meeting transcripts.</li>
+        <li>Developed full-stack real estate technology platforms with deal tracking, CRM integration, and automated outreach pipelines.</li>
+        <li>Designed RAG pipelines with vector databases and embeddings for semantic search across business knowledge bases.</li>
+        <li>Delivered Cloudflare Workers / D1 / R2 / KV serverless stacks with sub-50ms cold starts and zero-ops maintenance.</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="l1"><span class="org">Booster</span><span class="date">May 2022 — 2023</span></div>
+      <div class="l2"><span>Software Engineer</span></div>
+      <ul>
+        <li>Built and maintained a fundraising platform connecting nonprofits with corporate sponsors, processing donations and managing campaign workflows.</li>
+        <li>Developed backend services with NestJS and frontend interfaces with React, ensuring type-safe end-to-end data flow.</li>
+        <li>Integrated LLM-powered features for content generation and donor engagement analysis.</li>
+        <li>Collaborated with product and design to ship user-facing features on aggressive two-week sprint cycles.</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="l1"><span class="org">Bayer Crop Science</span><span class="date">Dec 2020 — 2022</span></div>
+      <div class="l2"><span>Full Stack Developer</span></div>
+      <ul>
+        <li>Developed digital agriculture tools serving farmers and agronomists with real-time field data visualization and decision support.</li>
+        <li>Built React and Node.js applications on AWS (Lambda, S3, RDS, CloudFormation) handling high-throughput geospatial data.</li>
+        <li>Implemented automated data pipelines for satellite imagery processing and yield prediction models.</li>
+        <li>Led frontend architecture decisions and mentored junior developers on React best practices and testing strategies.</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="l1"><span class="org">EOG Resources</span><span class="date">Apr 2019 — Oct 2020</span></div>
+      <div class="l2"><span>Frontend Developer</span></div>
+      <ul>
+        <li>Built React applications for oil and gas exploration teams, visualizing well data, production metrics, and geological surveys.</li>
+        <li>Developed automated testing bots with Playwright and Puppeteer to regression-test internal dashboards.</li>
+        <li>Mentored junior developers through code reviews, pair programming, and internal tech talks on modern frontend practices.</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="l1"><span class="org">Flatiron School</span><span class="date">Aug 2018 — Oct 2020</span></div>
+      <div class="l2"><span>Technical Coach</span></div>
+      <ul>
+        <li>Coached cohorts of 15–20 students through full-stack web development curriculum covering JavaScript, React, Ruby on Rails, and SQL.</li>
+        <li>Led weekly code reviews and debugging sessions, helping students build production-quality portfolio projects.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Key Projects</h2>
+    
+    <div class="entry">
+      <div class="l1"><span class="org">Resource Realty / 500 Deals</span></div>
+      <p class="desc">Full-stack real estate technology platform with deal tracking, CRM, automated outreach pipelines, and AI-powered market analysis.</p>
+    </div>
+
+    <div class="entry">
+      <div class="l1"><span class="org">Hermes Agent</span></div>
+      <p class="desc">Autonomous AI agent infrastructure with multi-agent orchestration, tool use, and persistent memory across collaborative workflows.</p>
+    </div>
+
+    <div class="entry">
+      <div class="l1"><span class="org">Review Dashboard</span></div>
+      <p class="desc">Real-time review system for AI-generated outputs — envelopes, verdicts, and automated application of approved changes.</p>
+    </div>
+
+    <div class="entry">
+      <div class="l1"><span class="org">Meeting-to-Tasks</span></div>
+      <p class="desc">Pipeline that ingests meeting transcripts, extracts actionable items with context tagging, and batch-creates structured tasks in Notion.</p>
+    </div>
+
+    <div class="entry">
+      <div class="l1"><span class="org">Outreach Automation</span></div>
+      <p class="desc">Automated email and CRM outreach system with lead discovery, contact enrichment, and personalized campaign sequencing.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Education</h2>
+    
+    <div class="entry">
+      <div class="l1"><span class="org">Coder Camps</span><span class="date">2016 — 2017</span></div>
+      <div class="l2"><span>MEAN Stack Certification</span></div>
+    </div>
+
+    <div class="entry">
+      <div class="l1"><span class="org">Houston Community College</span><span class="date">2014 — 2016</span></div>
+      <div class="l2"><span>Associate in Computer Science</span></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Certifications</h2>
+    <ul>
+      <li><strong>Learning How to Learn</strong> — Coursera</li>
+    </ul>
+  </section>
+
+</div>
+</body>
+</html>
