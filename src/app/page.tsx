@@ -38,7 +38,7 @@ export default function Home() {
               detail: "From pitch to product, I stay close to the vision.",
             },
           ].map((item) => (
-            <div key={item.title} className="rounded-2xl border border-white/10 p-5">
+            <div key={item.title} className="rounded-2xl border border-emerald-300/15 bg-emerald-950/30 p-5 shadow-lg shadow-emerald-900/30 backdrop-blur-md">
               <p className="text-lg font-semibold text-white">{item.title}</p>
               <p className="mt-2 text-sm text-white/60">{item.detail}</p>
             </div>
