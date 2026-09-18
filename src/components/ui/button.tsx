@@ -7,7 +7,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 
 const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className = "", variant = "default", size = "default", ...props }, ref) => {
-    const base = "inline-flex items-center justify-center font-semibold transition-all duration-300"
+    const base = "inline-flex items-center justify-center font-semibold transition-all duration-300 rounded-full"
     const sizeClass = size === "lg" ? "text-lg px-8 py-6" : "text-sm px-6 py-3"
     const variantClass =
       variant === "outline"
