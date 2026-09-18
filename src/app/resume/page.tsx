@@ -1,26 +1,18 @@
-import type { Metadata } from "next";
+"use client";
+
+import { useState, useRef, useEffect } from "react";
 import {
   FiGithub,
   FiGlobe,
-  FiLinkedin,
   FiExternalLink,
+  FiChevronDown,
+  FiCheck,
 } from "react-icons/fi";
-
-export const metadata: Metadata = {
-  title: "Resume | Jordan Christley",
-  description:
-    "Resume of Jordan Christley — Full-Stack AI Engineer & Independent Consultant specializing in LLM orchestration, autonomous agent design, and Cloudflare-native infrastructure.",
-};
 
 const LINKS = [
   {
-    name: "LinkedIn",
-    url: "https://linkedin.com/in/jordanchristley",
-    icon: FiLinkedin,
-  },
-  {
-    name: "GitHub",
-    url: "https://github.com/jordanchristley",
+    name: "JordanTreDaniel",
+    url: "https://github.com/JordanTreDaniel",
     icon: FiGithub,
   },
   {
@@ -199,6 +191,99 @@ const CERTIFICATIONS = [
   { name: "Learning How to Learn", issuer: "Coursera" },
 ];
 
+const RESUME_MD = `# Jordan Christley
+
+**Full-Stack AI Engineer & Independent Consultant**
+
+[GitHub](https://github.com/JordanTreDaniel) · [jordanchristley.com](https://jordanchristley.com)
+
+---
+
+## Summary
+
+AI-native full-stack engineer building production systems that combine LLM orchestration, autonomous agent design, and Cloudflare-native infrastructure into end-to-end business tools. Specializes in RAG pipelines, multi-agent workflow orchestration, and browser automation.
+
+---
+
+## Technical Skills
+
+**Languages:** Python, TypeScript, Rust, JavaScript, SQL
+
+**Frontend:** React, Next.js, Redux, Tailwind CSS, Playwright
+
+**Backend:** Node.js, NestJS, Express, FastAPI, Python APIs
+
+**AI / ML:** RAG Pipelines, LLM Orchestration (Claude, OpenAI), Vector Databases, Embeddings, AI Agent Design, Prompt Engineering
+
+**Infrastructure:** Cloudflare Workers / D1 / R2 / KV, AWS (Lambda, S3, RDS, CloudFormation), Docker, Kubernetes, Terraform, GCP
+
+**Databases:** PostgreSQL, SQLite / D1, Redis, Supabase, MongoDB
+
+**Automation:** Playwright, Puppeteer, FFmpeg, Email Automation, Notion API
+
+**Domains:** Real Estate Tech, CRM, SaaS, Billing / Stripe, Meeting Transcription & Task Extraction
+
+---
+
+## Experience
+
+### Independent Consultant — Emerald Technology (2022 – Present)
+
+- Architected and shipped AI-powered systems combining LLM orchestration, autonomous agent design, and Cloudflare-native infrastructure for end-to-end business tooling.
+- Built multi-agent workflow engines with real-time collaboration, review dashboards, and automated task extraction from meeting transcripts.
+- Developed full-stack real estate technology platforms with deal tracking, CRM integration, and automated outreach pipelines.
+- Designed RAG pipelines with vector databases and embeddings for semantic search across business knowledge bases.
+- Delivered Cloudflare Workers / D1 / R2 / KV serverless stacks with sub-50ms cold starts and zero-ops maintenance.
+
+### Software Engineer — Booster (May 2022 – 2023)
+
+- Built and maintained a fundraising platform connecting nonprofits with corporate sponsors, processing donations and managing campaign workflows.
+- Developed backend services with NestJS and frontend interfaces with React, ensuring type-safe end-to-end data flow.
+- Integrated LLM-powered features for content generation and donor engagement analysis.
+- Collaborated with product and design to ship user-facing features on aggressive two-week sprint cycles.
+
+### Full Stack Developer — Bayer Crop Science (Dec 2020 – 2022)
+
+- Developed digital agriculture tools serving farmers and agronomists with real-time field data visualization and decision support.
+- Built React and Node.js applications on AWS (Lambda, S3, RDS, CloudFormation) handling high-throughput geospatial data.
+- Implemented automated data pipelines for satellite imagery processing and yield prediction models.
+- Led frontend architecture decisions and mentored junior developers on React best practices and testing strategies.
+
+### Frontend Developer — EOG Resources (Apr 2019 – Oct 2020)
+
+- Built React applications for oil and gas exploration teams, visualizing well data, production metrics, and geological surveys.
+- Developed automated testing bots with Playwright and Puppeteer to regression-test internal dashboards.
+- Mentored junior developers through code reviews, pair programming, and internal tech talks on modern frontend practices.
+
+### Technical Coach — Flatiron School (Aug 2018 – Oct 2020)
+
+- Coached cohorts of 15–20 students through full-stack web development curriculum covering JavaScript, React, Ruby on Rails, and SQL.
+- Led weekly code reviews and debugging sessions, helping students build production-quality portfolio projects.
+
+---
+
+## Key Projects
+
+- **Resource Realty / 500 Deals** — Full-stack real estate technology platform with deal tracking, CRM, automated outreach pipelines, and AI-powered market analysis.
+- **Hermes Agent** — Autonomous AI agent infrastructure with multi-agent orchestration, tool use, and persistent memory across collaborative workflows.
+- **Review Dashboard** — Real-time review system for AI-generated outputs — envelopes, verdicts, and automated application of approved changes.
+- **Meeting-to-Tasks** — Pipeline that ingests meeting transcripts, extracts actionable items with context tagging, and batch-creates structured tasks in Notion.
+- **Outreach Automation** — Automated email and CRM outreach system with lead discovery, contact enrichment, and personalized campaign sequencing.
+
+---
+
+## Education
+
+- **Coder Camps** — MEAN Stack Certification (2016 – 2017)
+- **Houston Community College** — Associate in Computer Science (2014 – 2016)
+
+---
+
+## Certifications
+
+- Learning How to Learn — Coursera
+`;
+
 function SectionLabel({ children }: { children: React.ReactNode }) {
   return (
     <p className="text-sm uppercase tracking-[0.3em] text-emerald-200/70">
@@ -209,15 +294,36 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
 
 function SkillBadge({ item }: { item: string }) {
   return (
-    <span className="inline-block rounded-full border border-emerald-300/15 bg-emerald-950/50 px-3 py-1 text-xs text-emerald-100/80">
+    <span className="inline-block rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-emerald-100/80">
       {item}
     </span>
   );
 }
 
 export default function ResumePage() {
+  const [exportOpen, setExportOpen] = useState(false);
+  const [copied, setCopied] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    function handleClickOutside(e: MouseEvent) {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
+        setExportOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  async function copyMarkdown() {
+    await navigator.clipboard.writeText(RESUME_MD);
+    setCopied(true);
+    setExportOpen(false);
+    setTimeout(() => setCopied(false), 2000);
+  }
+
   return (
-    <main className="relative min-h-screen bg-[#050a07] text-white">
+    <main className="relative min-h-screen bg-[#050a07] text-white pt-24">
       <div className="mx-auto flex max-w-6xl flex-col gap-16 px-6 py-16 lg:py-24">
         {/* ── Header ──────────────────────────────────────────── */}
         <header className="flex flex-col gap-6">
@@ -230,7 +336,7 @@ export default function ResumePage() {
                 Full-Stack AI Engineer &amp; Independent Consultant
               </p>
             </div>
-            <div className="flex flex-wrap gap-3">
+            <div className="flex flex-wrap items-center gap-3">
               {LINKS.map((link) => {
                 const Icon = link.icon;
                 return (
@@ -239,7 +345,7 @@ export default function ResumePage() {
                     href={link.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 rounded-full border border-emerald-300/15 bg-emerald-950/40 px-4 py-2 text-sm text-emerald-200/80 transition-colors hover:border-emerald-300/30 hover:text-emerald-300"
+                    className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-md px-4 py-2 text-sm text-emerald-200/80 transition-colors hover:border-emerald-300/30 hover:text-emerald-300"
                   >
                     <Icon className="h-4 w-4" />
                     {link.name}
@@ -247,12 +353,50 @@ export default function ResumePage() {
                   </a>
                 );
               })}
+
+              {/* Export Dropdown */}
+              <div className="relative" ref={dropdownRef}>
+                <button
+                  onClick={() => setExportOpen(!exportOpen)}
+                  className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-md px-4 py-2 text-sm text-emerald-200/80 transition-colors hover:border-emerald-300/30 hover:text-emerald-300"
+                >
+                  Export
+                  <FiChevronDown
+                    className={`h-4 w-4 transition-transform ${exportOpen ? "rotate-180" : ""}`}
+                  />
+                </button>
+                {exportOpen && (
+                  <div className="absolute right-0 top-full z-50 mt-2 w-48 overflow-hidden rounded-xl border border-white/10 bg-white/5 backdrop-blur-md shadow-lg shadow-black/20">
+                    <a
+                      href="/jordan-christley-resume.pdf"
+                      download
+                      onClick={() => setExportOpen(false)}
+                      className="flex items-center gap-2 px-4 py-2.5 text-sm text-emerald-100/80 transition-colors hover:bg-white/10 hover:text-white"
+                    >
+                      Download PDF
+                    </a>
+                    <button
+                      onClick={copyMarkdown}
+                      className="flex w-full items-center gap-2 px-4 py-2.5 text-left text-sm text-emerald-100/80 transition-colors hover:bg-white/10 hover:text-white"
+                    >
+                      {copied ? (
+                        <>
+                          <FiCheck className="h-4 w-4 text-emerald-400" />
+                          Copied!
+                        </>
+                      ) : (
+                        "Copy Markdown"
+                      )}
+                    </button>
+                  </div>
+                )}
+              </div>
             </div>
           </div>
         </header>
 
         {/* ── Summary ─────────────────────────────────────────── */}
-        <section className="rounded-3xl border border-emerald-300/15 bg-emerald-950/30 p-6 shadow-lg shadow-emerald-900/30">
+        <section className="rounded-3xl border border-white/10 bg-white/5 backdrop-blur-md p-6 shadow-lg shadow-black/20">
           <SectionLabel>Summary</SectionLabel>
           <p className="mt-4 text-sm leading-relaxed text-emerald-50/80">
             AI-native full-stack engineer building production systems that
@@ -270,7 +414,7 @@ export default function ResumePage() {
             {SKILL_GROUPS.map((group) => (
               <div
                 key={group.group}
-                className="rounded-3xl border border-emerald-300/15 bg-emerald-950/30 p-5 shadow-lg shadow-emerald-900/30"
+                className="rounded-3xl border border-white/10 bg-white/5 backdrop-blur-md p-5 shadow-lg shadow-black/20"
               >
                 <h3 className="text-sm font-semibold text-emerald-300">
                   {group.group}
@@ -292,7 +436,7 @@ export default function ResumePage() {
             {EXPERIENCE.map((job) => (
               <div
                 key={`${job.company}-${job.role}`}
-                className="rounded-3xl border border-emerald-300/15 bg-emerald-950/30 p-6 shadow-lg shadow-emerald-900/30"
+                className="rounded-3xl border border-white/10 bg-white/5 backdrop-blur-md p-6 shadow-lg shadow-black/20"
               >
                 <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between">
                   <div>
@@ -327,7 +471,7 @@ export default function ResumePage() {
             {PROJECTS.map((project) => (
               <div
                 key={project.name}
-                className="rounded-3xl border border-emerald-300/15 bg-emerald-950/30 p-5 shadow-lg shadow-emerald-900/30"
+                className="rounded-3xl border border-white/10 bg-white/5 backdrop-blur-md p-5 shadow-lg shadow-black/20"
               >
                 <h3 className="text-sm font-semibold text-white">
                   {project.name}
@@ -347,7 +491,7 @@ export default function ResumePage() {
             {EDUCATION.map((edu) => (
               <div
                 key={edu.school}
-                className="flex flex-col gap-1 rounded-3xl border border-emerald-300/15 bg-emerald-950/30 p-5 shadow-lg shadow-emerald-900/30 sm:flex-row sm:items-baseline sm:justify-between"
+                className="flex flex-col gap-1 rounded-3xl border border-white/10 bg-white/5 backdrop-blur-md p-5 shadow-lg shadow-black/20 sm:flex-row sm:items-baseline sm:justify-between"
               >
                 <div>
                   <h3 className="text-sm font-semibold text-white">
@@ -370,7 +514,7 @@ export default function ResumePage() {
             {CERTIFICATIONS.map((cert) => (
               <div
                 key={cert.name}
-                className="inline-flex items-center gap-2 rounded-full border border-emerald-300/15 bg-emerald-950/40 px-4 py-2 text-sm text-emerald-100/80"
+                className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-md px-4 py-2 text-sm text-emerald-100/80"
               >
                 <span className="font-medium text-emerald-300">
                   {cert.name}

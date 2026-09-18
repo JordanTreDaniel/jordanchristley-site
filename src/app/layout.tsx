@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Fredoka, Nunito_Sans } from "next/font/google";
+import Nav from "@/components/Nav";
 import "./globals.css";
 
 const fredoka = Fredoka({
@@ -30,7 +31,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${fredoka.variable} ${nunitoSans.variable} antialiased`}>
+      <body className={`${fredoka.variable} ${nunitoSans.variable} antialiased pt-16`}>
+        <Nav />
         {children}
       </body>
     </html>
