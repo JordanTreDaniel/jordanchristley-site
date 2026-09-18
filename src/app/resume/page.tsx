@@ -294,7 +294,7 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
 
 function SkillBadge({ item }: { item: string }) {
   return (
-    <span className="inline-block rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-emerald-100/80">
+    <span className="inline-block rounded-full border border-emerald-300/20 bg-emerald-300/5 px-3 py-1 text-xs text-emerald-100/80 shadow-sm shadow-emerald-900/20">
       {item}
     </span>
   );
@@ -345,7 +345,7 @@ export default function ResumePage() {
                     href={link.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-md px-4 py-2 text-sm text-emerald-200/80 transition-colors hover:border-emerald-300/30 hover:text-emerald-300"
+                    className="inline-flex items-center gap-2 rounded-full border border-emerald-300/20 bg-emerald-300/5 backdrop-blur-md px-4 py-2 text-sm text-emerald-200/80 shadow-sm shadow-emerald-900/20 transition-all hover:border-emerald-300/40 hover:bg-emerald-300/10 hover:text-emerald-300 hover:shadow-md hover:shadow-emerald-900/30"
                   >
                     <Icon className="h-4 w-4" />
                     {link.name}
@@ -358,7 +358,7 @@ export default function ResumePage() {
               <div className="relative" ref={dropdownRef}>
                 <button
                   onClick={() => setExportOpen(!exportOpen)}
-                  className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-md px-4 py-2 text-sm text-emerald-200/80 transition-colors hover:border-emerald-300/30 hover:text-emerald-300"
+                  className="inline-flex items-center gap-2 rounded-full border border-emerald-300/20 bg-emerald-300/5 backdrop-blur-md px-4 py-2 text-sm text-emerald-200/80 shadow-sm shadow-emerald-900/20 transition-all hover:border-emerald-300/40 hover:bg-emerald-300/10 hover:text-emerald-300 hover:shadow-md hover:shadow-emerald-900/30"
                 >
                   Export
                   <FiChevronDown
@@ -366,7 +366,7 @@ export default function ResumePage() {
                   />
                 </button>
                 {exportOpen && (
-                  <div className="absolute right-0 top-full z-50 mt-2 w-48 overflow-hidden rounded-xl border border-white/10 bg-white/5 backdrop-blur-md shadow-lg shadow-black/20">
+                  <div className="absolute right-0 top-full z-50 mt-2 w-48 overflow-hidden rounded-xl border border-emerald-300/15 bg-emerald-950/40 backdrop-blur-md shadow-lg shadow-emerald-900/30">
                     <a
                       href="/jordan-christley-resume.pdf"
                       download
@@ -396,7 +396,7 @@ export default function ResumePage() {
         </header>
 
         {/* ── Summary ─────────────────────────────────────────── */}
-        <section className="rounded-3xl border border-white/10 bg-white/5 backdrop-blur-md p-6 shadow-lg shadow-black/20">
+        <section className="rounded-3xl border border-emerald-300/15 bg-emerald-950/30 p-6 shadow-lg shadow-emerald-900/30 backdrop-blur-md">
           <SectionLabel>Summary</SectionLabel>
           <p className="mt-4 text-sm leading-relaxed text-emerald-50/80">
             AI-native full-stack engineer building production systems that
@@ -414,7 +414,7 @@ export default function ResumePage() {
             {SKILL_GROUPS.map((group) => (
               <div
                 key={group.group}
-                className="rounded-3xl border border-white/10 bg-white/5 backdrop-blur-md p-5 shadow-lg shadow-black/20"
+                className="rounded-3xl border border-emerald-300/15 bg-emerald-950/30 p-5 shadow-lg shadow-emerald-900/30 backdrop-blur-md"
               >
                 <h3 className="text-sm font-semibold text-emerald-300">
                   {group.group}
@@ -436,7 +436,7 @@ export default function ResumePage() {
             {EXPERIENCE.map((job) => (
               <div
                 key={`${job.company}-${job.role}`}
-                className="rounded-3xl border border-white/10 bg-white/5 backdrop-blur-md p-6 shadow-lg shadow-black/20"
+                className="rounded-3xl border border-emerald-300/15 bg-emerald-950/30 p-6 shadow-lg shadow-emerald-900/30 backdrop-blur-md"
               >
                 <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between">
                   <div>
@@ -471,7 +471,7 @@ export default function ResumePage() {
             {PROJECTS.map((project) => (
               <div
                 key={project.name}
-                className="rounded-3xl border border-white/10 bg-white/5 backdrop-blur-md p-5 shadow-lg shadow-black/20"
+                className="rounded-3xl border border-emerald-300/15 bg-emerald-950/30 p-5 shadow-lg shadow-emerald-900/30 backdrop-blur-md"
               >
                 <h3 className="text-sm font-semibold text-white">
                   {project.name}
@@ -514,7 +514,7 @@ export default function ResumePage() {
             {CERTIFICATIONS.map((cert) => (
               <div
                 key={cert.name}
-                className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-md px-4 py-2 text-sm text-emerald-100/80"
+                className="inline-flex items-center gap-2 rounded-full border border-emerald-300/20 bg-emerald-300/5 backdrop-blur-md px-4 py-2 text-sm text-emerald-100/80 shadow-sm shadow-emerald-900/20"
               >
                 <span className="font-medium text-emerald-300">
                   {cert.name}

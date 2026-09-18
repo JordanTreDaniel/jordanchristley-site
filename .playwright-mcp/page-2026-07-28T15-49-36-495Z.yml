@@ -1,0 +1,109 @@
+- generic [active] [ref=f13e1]:
+  - main [ref=f13e2]:
+    - navigation [ref=f13e3]:
+      - generic [ref=f13e4]: Emerald Technology Consulting
+      - button [ref=f13e5]
+    - generic [ref=f13e12]:
+      - heading "Make more money with technology" [level=2] [ref=f13e13]
+      - paragraph [ref=f13e14]: Cut through the noise. Let's build your path.
+    - generic [ref=f13e19]:
+      - generic [ref=f13e20]:
+        - generic [ref=f13e21]:
+          - heading "Product engineering" [level=2] [ref=f13e26]
+          - paragraph [ref=f13e27]: Launch new web platforms and MVPs with speed and precision.
+        - generic [ref=f13e28]:
+          - heading "Experience design" [level=2] [ref=f13e34]
+          - paragraph [ref=f13e35]: High-end UI systems with bold visual direction and polish.
+        - generic [ref=f13e36]:
+          - heading "AI integration" [level=2] [ref=f13e40]
+          - paragraph [ref=f13e41]: Modern AI workflows that feel native to your product.
+        - generic [ref=f13e42]:
+          - heading "Platform hardening" [level=2] [ref=f13e45]
+          - paragraph [ref=f13e46]: Performance, observability, and security upgrades.
+        - generic [ref=f13e47]:
+          - heading "Launch velocity" [level=2] [ref=f13e50]
+          - paragraph [ref=f13e51]: Tight execution cycles with momentum built in.
+      - generic [ref=f13e52]:
+        - paragraph [ref=f13e53]: Portfolio
+        - heading "Recent Work" [level=2] [ref=f13e54]
+        - paragraph [ref=f13e55]: Immersive, high-craft projects that demonstrate our approach to design, development, and delivery.
+        - generic [ref=f13e58]:
+          - link [ref=f13e59] [cursor=pointer]:
+            - /url: https://pawparadise-journey.higgsfield.app/
+            - generic [ref=f13e60]:
+              - img "Paw Paradise Journey" [ref=f13e61]
+              - generic [ref=f13e62]: Open site
+          - generic [ref=f13e67]:
+            - link [ref=f13e68] [cursor=pointer]:
+              - /url: https://pawparadise-journey.higgsfield.app/
+              - heading "Paw Paradise Journey" [level=3] [ref=f13e69]
+            - paragraph [ref=f13e74]: Scroll-driven journey site for a pet care brand. Built with AI-generated video flythrough, interactive flash cards, and a polished handoff form — all in a single continuous scroll experience.
+            - generic [ref=f13e75]:
+              - generic [ref=f13e76]: Next.js
+              - generic [ref=f13e77]: Framer Motion
+              - generic [ref=f13e78]: AI Video
+              - generic [ref=f13e79]: Scroll-Scrub
+              - generic [ref=f13e80]: Cloudflare Workers
+      - generic [ref=f13e81]:
+        - generic [ref=f13e82]:
+          - heading "Engagements built for momentum." [level=2] [ref=f13e83]
+          - paragraph [ref=f13e84]: Flexible sprints, focused outcomes, and a partner who stays close to the product.
+          - generic [ref=f13e85]:
+            - generic [ref=f13e86]: Fractional product & engineering leadership
+            - generic [ref=f13e87]: Design + build in two-week delivery cycles
+            - generic [ref=f13e88]: Polished marketing and sales enablement sites
+            - generic [ref=f13e89]: Post-launch optimization and performance tuning
+        - generic [ref=f13e90]:
+          - generic [ref=f13e91]:
+            - paragraph [ref=f13e92]: Trusted stack
+            - heading "Modern tools with proven delivery." [level=2] [ref=f13e93]
+            - paragraph [ref=f13e94]: A curated toolkit for web platforms, product builds, and AI-powered experiences.
+          - generic [ref=f13e95]:
+            - generic [ref=f13e96]: React
+            - generic [ref=f13e100]: Next.js
+            - generic [ref=f13e104]: TypeScript
+            - generic [ref=f13e108]: JavaScript
+            - generic [ref=f13e112]: Node.js
+            - generic [ref=f13e116]: AWS
+            - generic [ref=f13e120]: Python
+            - generic [ref=f13e124]: PostgreSQL
+            - generic [ref=f13e128]: MySQL
+            - generic [ref=f13e132]: MongoDB
+            - generic [ref=f13e136]: Supabase
+            - generic [ref=f13e140]: Prisma
+            - generic [ref=f13e144]: Tailwind
+            - generic [ref=f13e148]: OpenAI
+            - generic [ref=f13e152]: Anthropic
+            - generic [ref=f13e156]: Heroku
+            - generic [ref=f13e160]: Express
+            - generic [ref=f13e164]: NestJS
+            - generic [ref=f13e168]: Docker
+            - generic [ref=f13e172]: Vercel
+            - generic [ref=f13e176]: Git
+            - generic [ref=f13e180]: Figma
+      - generic [ref=f13e185]:
+        - generic [ref=f13e186]:
+          - heading "Let's find clarity together" [level=2] [ref=f13e187]
+          - paragraph [ref=f13e188]: Tell me about your business, what's working, and where you're stuck. I'll follow up with practical next steps.
+        - generic [ref=f13e189]:
+          - generic [ref=f13e190]:
+            - generic [ref=f13e191]:
+              - text: Name
+              - textbox "Name" [ref=f13e192]:
+                - /placeholder: Jordan
+            - generic [ref=f13e193]:
+              - text: Email
+              - textbox "Email" [ref=f13e194]:
+                - /placeholder: you@company.com
+          - generic [ref=f13e195]:
+            - text: Company
+            - textbox "Company" [ref=f13e196]:
+              - /placeholder: Emerald Labs
+          - generic [ref=f13e197]:
+            - text: Message
+            - textbox "Message" [ref=f13e198]:
+              - /placeholder: Tell me what you're building.
+          - generic [ref=f13e199]:
+            - button "Send a message" [ref=f13e200]
+            - status [ref=f13e201]: I'll respond within 24 hours.
+  - alert [ref=f13e202]
