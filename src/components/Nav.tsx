@@ -13,7 +13,7 @@ export default function Nav() {
   const pathname = usePathname();
 
   // Hide nav on emerald-tech page — it has its own JourneyPage navigation
-  if (pathname === "/emerald-tech") return null;
+  if (pathname.startsWith("/emerald")) return null;
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-center gap-2 py-4 px-6">

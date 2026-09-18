@@ -11,8 +11,8 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     const sizeClass = size === "lg" ? "text-lg px-8 py-6" : "text-sm px-6 py-3"
     const variantClass =
       variant === "outline"
-        ? "border border-emerald-300/20 text-emerald-200 bg-emerald-300/5 hover:bg-emerald-300/10 hover:border-emerald-300/40 backdrop-blur-md shadow-sm shadow-emerald-900/20"
-        : "bg-emerald-300 text-emerald-950 hover:bg-emerald-200 shadow-lg shadow-emerald-900/40 font-semibold"
+        ? "border border-emerald-300/20 text-emerald-200 bg-emerald-300/5 hover:bg-emerald-300/10 hover:border-emerald-300/40 backdrop-blur-md"
+        : "bg-emerald-300 text-emerald-950 hover:bg-emerald-200 shadow-lg shadow-emerald-900/40"
     return (
       <button
         ref={ref}
