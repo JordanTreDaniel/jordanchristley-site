@@ -1,8 +1,0 @@
-[     444ms] [LOG] [hf-fetch] GET /assets/world/v2/scene-1-mobile.mp4 @ https://pawparadise-journey.higgsfield.app/:249
-[     445ms] [LOG] [hf-fetch] GET /assets/world/v2/scene-2-mobile.mp4 @ https://pawparadise-journey.higgsfield.app/:249
-[     613ms] [WARNING] Failed to decode downloaded font: https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&display=swap @ https://pawparadise-journey.higgsfield.app/:0
-[     613ms] [WARNING] OTS parsing error: invalid sfntVersion: 791289955 @ https://pawparadise-journey.higgsfield.app/:0
-[    8202ms] [WARNING] Failed to decode downloaded font: https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&display=swap @ https://pawparadise-journey.higgsfield.app/:0
-[    8202ms] [WARNING] OTS parsing error: invalid sfntVersion: 791289955 @ https://pawparadise-journey.higgsfield.app/:0
-[    8211ms] [LOG] [hf-fetch] GET /assets/world/v2/scene-1.mp4 @ https://pawparadise-journey.higgsfield.app/:249
-[    8211ms] [LOG] [hf-fetch] GET /assets/world/v2/scene-2.mp4 @ https://pawparadise-journey.higgsfield.app/:249

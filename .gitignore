@@ -27,6 +27,7 @@
 # playwright
 .playwright-brave/
 .playwright-mcp/
+${HOME}/.playwright-brave/
 
 # debug
 npm-debug.log*
