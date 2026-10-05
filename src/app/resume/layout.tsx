@@ -15,7 +15,6 @@ export const metadata: Metadata = {
     title: "Jordan Christley — AI Consultant & Software Engineer in Houston, TX",
     description:
       "Jordan Christley is a 10+ year self-taught software engineer in Houston, TX building AI tools, web apps, and creative technology through Emerald Technology Consulting.",
-    images: [{ url: `${siteUrl}/opengraph-image.png`, width: 1200, height: 630, alt: "Jordan Christley" }],
   },
   twitter: {
     card: "summary_large_image",
@@ -23,7 +22,6 @@ export const metadata: Metadata = {
     description:
       "Jordan Christley is a 10+ year self-taught software engineer in Houston, TX building AI tools, web apps, and creative technology through Emerald Technology Consulting.",
     creator: "@jordanchristley",
-    images: [`${siteUrl}/opengraph-image.png`],
   },
 };
 
