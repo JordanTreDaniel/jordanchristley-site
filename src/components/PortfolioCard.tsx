@@ -32,7 +32,7 @@ export default function PortfolioCard({
   const glowBackground = useTransform(
     [springX, springY],
     ([latestX, latestY]: number[]) =>
-      `radial-gradient(420px circle at ${latestX * 100}% ${latestY * 100}%, rgba(92, 219, 138, 0.08), transparent 70%)`,
+      `radial-gradient(420px circle at ${latestX * 100}% ${latestY * 100}%, rgba(24, 216, 120, 0.08), transparent 70%)`,
   );
 
   const handleMouseMove = (e: React.MouseEvent) => {
@@ -115,7 +115,7 @@ export default function PortfolioCard({
               <FiArrowUpRight className="h-4 w-4" />
             </motion.span>
           </a>
-          <p className="text-sm leading-relaxed text-emerald-100/60">
+          <p className="text-sm leading-relaxed text-emerald-50/70">
             {description}
           </p>
           <div className="flex flex-wrap gap-2 pt-1">

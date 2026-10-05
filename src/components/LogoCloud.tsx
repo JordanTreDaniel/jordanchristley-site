@@ -60,7 +60,7 @@ export default function LogoCloud() {
       {logos.map(({ name, Icon }) => (
         <div
           key={name}
-          className="flex items-center gap-2 rounded-full border border-emerald-200/15 bg-emerald-950/40 px-4 py-2 text-xs text-emerald-50/80 shadow-sm shadow-emerald-500/10"
+          className="flex items-center gap-2 rounded-full border border-emerald-300/15 bg-emerald-950/40 px-4 py-2 text-xs text-emerald-50/80 shadow-sm shadow-emerald-500/10"
         >
           <Icon className="h-4 w-4 text-emerald-200/90" aria-hidden />
           <span>{name}</span>

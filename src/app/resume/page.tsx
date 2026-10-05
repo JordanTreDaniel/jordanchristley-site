@@ -323,13 +323,13 @@ export default function ResumePage() {
   }
 
   return (
-    <main className="relative min-h-screen bg-[#050a07] text-white pt-24">
+    <main className="relative min-h-screen bg-obsidian text-glass-highlight pt-24">
       <div className="mx-auto flex max-w-6xl flex-col gap-16 px-6 py-16 lg:py-24">
         {/* ── Header ──────────────────────────────────────────── */}
         <header className="flex flex-col gap-6">
           <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
             <div>
-              <h1 className="text-4xl font-bold tracking-tight text-white lg:text-5xl">
+              <h1 className="text-4xl font-bold tracking-tight text-glass-highlight lg:text-5xl">
                 Jordan Christley
               </h1>
               <p className="mt-2 text-lg text-emerald-300">
@@ -371,13 +371,13 @@ export default function ResumePage() {
                       href="/jordan-christley-resume.pdf"
                       download
                       onClick={() => setExportOpen(false)}
-                      className="flex items-center gap-2 px-4 py-2.5 text-sm text-emerald-100/80 transition-colors hover:bg-white/10 hover:text-white"
+                      className="flex items-center gap-2 px-4 py-2.5 text-sm text-emerald-100/80 transition-colors hover:bg-glass-highlight/10 hover:text-glass-highlight"
                     >
                       Download PDF
                     </a>
                     <button
                       onClick={copyMarkdown}
-                      className="flex w-full items-center gap-2 px-4 py-2.5 text-left text-sm text-emerald-100/80 transition-colors hover:bg-white/10 hover:text-white"
+                      className="flex w-full items-center gap-2 px-4 py-2.5 text-left text-sm text-emerald-100/80 transition-colors hover:bg-glass-highlight/10 hover:text-glass-highlight"
                     >
                       {copied ? (
                         <>
@@ -440,7 +440,7 @@ export default function ResumePage() {
               >
                 <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between">
                   <div>
-                    <h3 className="text-base font-semibold text-white">
+                    <h3 className="text-base font-semibold text-glass-highlight">
                       {job.role}
                     </h3>
                     <p className="text-sm text-emerald-300/80">{job.company}</p>
@@ -473,7 +473,7 @@ export default function ResumePage() {
                 key={project.name}
                 className="rounded-3xl border border-emerald-300/15 bg-emerald-950/30 p-5 shadow-lg shadow-emerald-900/30 backdrop-blur-md"
               >
-                <h3 className="text-sm font-semibold text-white">
+                <h3 className="text-sm font-semibold text-glass-highlight">
                   {project.name}
                 </h3>
                 <p className="mt-2 text-xs leading-relaxed text-emerald-100/60">
@@ -491,10 +491,10 @@ export default function ResumePage() {
             {EDUCATION.map((edu) => (
               <div
                 key={edu.school}
-                className="flex flex-col gap-1 rounded-3xl border border-white/10 bg-white/5 backdrop-blur-md p-5 shadow-lg shadow-black/20 sm:flex-row sm:items-baseline sm:justify-between"
+                className="flex flex-col gap-1 rounded-3xl border border-glass-highlight/10 bg-glass-highlight/5 backdrop-blur-md p-5 shadow-lg shadow-black/20 sm:flex-row sm:items-baseline sm:justify-between"
               >
                 <div>
-                  <h3 className="text-sm font-semibold text-white">
+                  <h3 className="text-sm font-semibold text-glass-highlight">
                     {edu.school}
                   </h3>
                   <p className="text-xs text-emerald-300/70">{edu.degree}</p>

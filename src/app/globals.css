@@ -2,13 +2,38 @@
 
 :root {
   color-scheme: dark;
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.145 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --border: oklch(0.269 0 0);
-  --primary: oklch(0.985 0 0);
-  --primary-foreground: oklch(0.145 0 0);
+  --background: #071B18;
+  --foreground: #D7FFE3;
+  --card: #071B18;
+  --card-foreground: #D7FFE3;
+  --border: rgba(24, 216, 120, 0.15);
+  --primary: #18D878;
+  --primary-foreground: #071B18;
+}
+
+@theme {
+  --font-sans: var(--font-nunito);
+  --font-display: var(--font-fredoka);
+
+  /* Remap Tailwind's default emerald scale to brand palette */
+  --color-emerald-50: #D7FFE3;
+  --color-emerald-100: #7DFF9A;
+  --color-emerald-200: #7DFF9A;
+  --color-emerald-300: #18D878;
+  --color-emerald-400: #18D878;
+  --color-emerald-500: #087A55;
+  --color-emerald-600: #087A55;
+  --color-emerald-700: #063F32;
+  --color-emerald-800: #063F32;
+  --color-emerald-900: #063F32;
+  --color-emerald-950: #071B18;
+
+  /* Custom brand token colors */
+  --color-obsidian: #071B18;
+  --color-deep-emerald: #063F32;
+  --color-living-green: #18D878;
+  --color-electric-mint: #7DFF9A;
+  --color-glass-highlight: #D7FFE3;
 }
 
 @theme inline {
@@ -25,7 +50,7 @@
 
 @layer base {
   body {
-    @apply bg-neutral-950 text-neutral-100 antialiased;
+    @apply bg-obsidian text-glass-highlight antialiased;
     font-family: var(--font-sans);
   }
 
@@ -38,84 +63,91 @@
   }
 }
 
-/* ── Green Glass Design System ────────────────────────────── */
-/* Emerald-tinted glassmorphism for dark UIs. */
-/* Usage: apply .glass to any element for the base effect, */
-/* or .glass-card / .glass-pill / .glass-badge for variants. */
+/* ── Emerald Glass Design System ─────────────────────────── */
+/* Material language: deep translucent green glass →           */
+/* internal refraction → localized bright green →             */
+/* sharp edge highlight.                                      */
 
 .glass {
-  background: rgba(5, 46, 22, 0.3);          /* emerald-950 at 30% */
-  border: 1px solid rgba(110, 231, 183, 0.15); /* emerald-300 at 15% */
-  backdrop-filter: blur(12px);
-  box-shadow: 0 10px 30px -10px rgba(5, 46, 22, 0.3); /* emerald-900 at 30% */
+  background: rgba(6, 63, 50, 0.28);
+  border: 1px solid rgba(24, 216, 120, 0.14);
+  backdrop-filter: blur(14px);
+  box-shadow:
+    0 12px 40px -12px rgba(7, 27, 24, 0.55),
+    inset 0 1px 0 0 rgba(215, 255, 227, 0.06);
 }
 
 .glass-card {
-  background: rgba(5, 46, 22, 0.3);
-  border: 1px solid rgba(110, 231, 183, 0.15);
-  backdrop-filter: blur(12px);
+  background: rgba(6, 63, 50, 0.28);
+  border: 1px solid rgba(24, 216, 120, 0.14);
+  backdrop-filter: blur(14px);
   box-shadow:
-    0 10px 30px -10px rgba(5, 46, 22, 0.3),
-    inset 0 1px 0 0 rgba(110, 231, 183, 0.05);
+    0 12px 40px -12px rgba(7, 27, 24, 0.55),
+    inset 0 1px 0 0 rgba(215, 255, 227, 0.07);
   border-radius: 1.5rem;
 }
 
 .glass-pill {
-  background: rgba(5, 46, 22, 0.3);
-  border: 1px solid rgba(110, 231, 183, 0.2);
-  backdrop-filter: blur(12px);
-  box-shadow: 0 4px 12px -4px rgba(5, 46, 22, 0.2);
+  background: rgba(6, 63, 50, 0.32);
+  border: 1px solid rgba(24, 216, 120, 0.16);
+  backdrop-filter: blur(14px);
+  box-shadow:
+    0 4px 16px -4px rgba(7, 27, 24, 0.4),
+    inset 0 1px 0 0 rgba(215, 255, 227, 0.05);
   border-radius: 9999px;
 }
 
 .glass-pill:hover {
-  border-color: rgba(110, 231, 183, 0.4);
-  background: rgba(5, 46, 22, 0.4);
-  box-shadow: 0 6px 20px -4px rgba(5, 46, 22, 0.3);
+  border-color: rgba(24, 216, 120, 0.32);
+  background: rgba(6, 63, 50, 0.42);
+  box-shadow:
+    0 6px 24px -4px rgba(7, 27, 24, 0.5),
+    inset 0 1px 0 0 rgba(215, 255, 227, 0.08);
 }
 
 .glass-badge {
-  background: rgba(110, 231, 183, 0.05);
-  border: 1px solid rgba(110, 231, 183, 0.2);
+  background: rgba(24, 216, 120, 0.06);
+  border: 1px solid rgba(24, 216, 120, 0.18);
   backdrop-filter: blur(8px);
-  box-shadow: 0 2px 8px -2px rgba(5, 46, 22, 0.2);
+  box-shadow: 0 2px 10px -2px rgba(7, 27, 24, 0.35);
   border-radius: 9999px;
 }
 
 .glass-badge:hover {
-  background: rgba(110, 231, 183, 0.1);
-  border-color: rgba(110, 231, 183, 0.3);
+  background: rgba(24, 216, 120, 0.1);
+  border-color: rgba(24, 216, 120, 0.3);
 }
 
-/* Button glow variants */
 .glass-btn-primary {
-  background: rgb(110, 231, 183);             /* emerald-300 */
-  color: rgb(5, 10, 7);                       /* emerald-950 */
+  background: rgb(24, 216, 120);
+  color: rgb(7, 27, 24);
   border: none;
-  box-shadow: 0 8px 24px -6px rgba(5, 46, 22, 0.4);
+  box-shadow: 0 8px 28px -6px rgba(24, 216, 120, 0.35);
   transition: all 0.2s ease;
 }
 
 .glass-btn-primary:hover {
-  background: rgb(167, 243, 208);             /* emerald-200 */
-  box-shadow: 0 12px 32px -6px rgba(5, 46, 22, 0.5);
+  background: rgb(125, 255, 154);
+  box-shadow: 0 12px 36px -6px rgba(24, 216, 120, 0.45);
   transform: translateY(-1px);
 }
 
 .glass-btn-outline {
-  background: rgba(110, 231, 183, 0.05);
-  color: rgb(167, 243, 208);                  /* emerald-200 */
-  border: 1px solid rgba(110, 231, 183, 0.2);
+  background: rgba(24, 216, 120, 0.05);
+  color: rgb(125, 255, 154);
+  border: 1px solid rgba(125, 255, 154, 0.28);
   backdrop-filter: blur(8px);
-  box-shadow: 0 4px 12px -4px rgba(5, 46, 22, 0.2);
+  box-shadow: 0 4px 14px -4px rgba(7, 27, 24, 0.35);
   transition: all 0.2s ease;
 }
 
 .glass-btn-outline:hover {
-  background: rgba(110, 231, 183, 0.1);
-  border-color: rgba(110, 231, 183, 0.4);
-  box-shadow: 0 6px 20px -4px rgba(5, 46, 22, 0.3);
+  background: rgba(24, 216, 120, 0.1);
+  border-color: rgba(125, 255, 154, 0.5);
+  box-shadow: 0 6px 22px -4px rgba(7, 27, 24, 0.45);
 }
+
+/* ── Journey Page ────────────────────────────────────────── */
 
 .journey-stage {
   position: relative;
@@ -143,9 +175,9 @@
   inset: 0;
   background: linear-gradient(
     to bottom,
-    rgba(0,0,0,0.4) 0%,
-    rgba(0,0,0,0.15) 40%,
-    rgba(0,0,0,0.5) 100%
+    rgba(0, 0, 0, 0.4) 0%,
+    rgba(0, 0, 0, 0.15) 40%,
+    rgba(0, 0, 0, 0.5) 100%
   );
 }
 
@@ -163,8 +195,8 @@
   font-weight: 700;
   line-height: 1.1;
   letter-spacing: -0.02em;
-  color: #f0fdf4;
-  text-shadow: 0 2px 20px rgba(0,0,0,0.5);
+  color: #D7FFE3;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
 }
 
 .journey-subtext {
@@ -172,8 +204,8 @@
   opacity: 0.85;
   max-width: 42rem;
   margin-top: 0.75rem;
-  color: #d1fae5;
-  text-shadow: 0 1px 12px rgba(0,0,0,0.4);
+  color: #D7FFE3;
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.4);
 }
 
 .journey-tags {
@@ -185,12 +217,12 @@
 
 .journey-tag {
   padding: 0.375rem 0.875rem;
-  border: 1px solid rgba(92, 219, 138, 0.3);
+  border: 1px solid rgba(24, 216, 120, 0.25);
   border-radius: 9999px;
   font-size: 0.8125rem;
-  color: #5cdb8a;
+  color: #18D878;
   backdrop-filter: blur(12px);
-  background: rgba(92, 219, 138, 0.08);
+  background: rgba(24, 216, 120, 0.08);
 }
 
 .journey-indicators {
@@ -208,13 +240,13 @@
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: rgba(255,255,255,0.25);
+  background: rgba(255, 255, 255, 0.25);
   transition: all 0.3s ease;
 }
 
 .journey-indicator.active {
-  background: #5cdb8a;
-  box-shadow: 0 0 12px rgba(92, 219, 138, 0.5);
+  background: #18D878;
+  box-shadow: 0 0 12px rgba(24, 216, 120, 0.45);
   transform: scale(1.4);
 }
 
@@ -230,25 +262,25 @@
 }
 
 .journey-cta-primary {
-  background: #5cdb8a;
-  color: #050a07;
+  background: #18D878;
+  color: #071B18;
 }
 
 .journey-cta-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(92, 219, 138, 0.3);
+  box-shadow: 0 8px 24px rgba(24, 216, 120, 0.3);
 }
 
 .journey-cta-ghost {
-  background: rgba(247, 243, 232, 0.06);
-  color: #f7f3e8;
-  border: 1px solid rgba(247, 243, 232, 0.25);
+  background: rgba(215, 255, 227, 0.06);
+  color: #D7FFE3;
+  border: 1px solid rgba(215, 255, 227, 0.22);
   font-weight: 600;
 }
 
 .journey-cta-ghost:hover {
-  background: rgba(247, 243, 232, 0.12);
-  border-color: rgba(247, 243, 232, 0.45);
+  background: rgba(215, 255, 227, 0.1);
+  border-color: rgba(215, 255, 227, 0.4);
 }
 
 .journey-nav {
@@ -269,21 +301,21 @@
   font-size: 0.8125rem;
   font-weight: 600;
   letter-spacing: 0.02em;
-  color: #d1fae5;
-  background: rgba(5, 10, 7, 0.5);
-  border: 1px solid rgba(92, 219, 138, 0.25);
+  color: #D7FFE3;
+  background: rgba(7, 27, 24, 0.5);
+  border: 1px solid rgba(24, 216, 120, 0.22);
   backdrop-filter: blur(10px);
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
 }
 
 .journey-chip:hover {
-  border-color: rgba(92, 219, 138, 0.5);
-  color: #5cdb8a;
+  border-color: rgba(24, 216, 120, 0.45);
+  color: #18D878;
 }
 
 .journey-stage-reduced {
   position: relative;
-  background: #050a07;
+  background: #071B18;
 }
 
 .journey-reduced-section {
@@ -327,7 +359,7 @@
   font-weight: 700;
   letter-spacing: 0.25em;
   text-transform: uppercase;
-  color: #7dffb0;
+  color: #7DFF9A;
   text-shadow: 0 1px 10px rgba(0, 0, 0, 0.6);
 }
 

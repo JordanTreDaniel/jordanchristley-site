@@ -13,18 +13,23 @@ type ContactFormProps = {
 
 const toneStyles = {
   neutral: {
-    panel: "border-white/10 bg-white/5",
-    input: "border-white/10 bg-white/5 focus:border-emerald-400/60",
-    button: "bg-white text-black hover:bg-white/90",
-    subtle: "text-white/60",
+    panel: "border-emerald-300/15 bg-emerald-900/30 backdrop-blur-md",
+    input:
+      "border-emerald-300/15 bg-emerald-950/40 focus:border-emerald-300/50",
+    button: "bg-emerald-300 text-emerald-950 hover:bg-emerald-200",
+    subtle: "text-glass-highlight/60",
   },
   emerald: {
-    panel: "border-emerald-300/20 bg-emerald-950/40",
-    input: "border-emerald-300/20 bg-emerald-950/30 focus:border-emerald-300/60",
-    button: "bg-emerald-300 text-emerald-950 hover:bg-emerald-200",
+    panel: "border-emerald-300/20 bg-emerald-900/40 backdrop-blur-md",
+    input:
+      "border-emerald-300/20 bg-emerald-950/40 focus:border-emerald-300/60",
+    button: "bg-emerald-300 text-emerald-950 hover:bg-emerald-200 shadow-lg shadow-emerald-300/25",
     subtle: "text-emerald-100/70",
   },
 };
+
+const inputClass =
+  "w-full rounded-xl border px-4 py-3 text-glass-highlight placeholder:text-glass-highlight/40 focus:outline-none";
 
 export default function ContactForm({
   title,
@@ -39,10 +44,10 @@ export default function ContactForm({
 
   return (
     <div
-      className={`rounded-3xl border px-6 py-8 shadow-2xl shadow-black/30 ${styles.panel}`}
+      className={`rounded-3xl border px-6 py-8 shadow-2xl shadow-emerald-950/40 ${styles.panel}`}
     >
       <div className="flex flex-col gap-3">
-        <h2 className="text-2xl font-semibold text-white">{title}</h2>
+        <h2 className="text-2xl font-semibold text-glass-highlight">{title}</h2>
         <p className={`text-sm ${styles.subtle}`}>{description}</p>
       </div>
 
@@ -57,9 +62,8 @@ export default function ContactForm({
           <label className="grid gap-2 text-sm">
             Name
             <input
-              className={`w-full rounded-xl border px-4 py-3 text-white placeholder:text-white/40 focus:outline-none ${styles.input}`}
-              name="name"
-              placeholder="Jordan"
+              className={`${inputClass} ${styles.input}`}
+              name="name"              placeholder="Jordan"
               required
               type="text"
             />
@@ -67,7 +71,7 @@ export default function ContactForm({
           <label className="grid gap-2 text-sm">
             Email
             <input
-              className={`w-full rounded-xl border px-4 py-3 text-white placeholder:text-white/40 focus:outline-none ${styles.input}`}
+              className={`${inputClass} ${styles.input}`}
               name="email"
               placeholder="you@company.com"
               required
@@ -80,7 +84,7 @@ export default function ContactForm({
           <label className="grid gap-2 text-sm">
             Company
             <input
-              className={`w-full rounded-xl border px-4 py-3 text-white placeholder:text-white/40 focus:outline-none ${styles.input}`}
+              className={`${inputClass} ${styles.input}`}
               name="company"
               placeholder="Emerald Labs"
               type="text"
@@ -91,9 +95,8 @@ export default function ContactForm({
         <label className="grid gap-2 text-sm">
           Message
           <textarea
-            className={`min-h-[140px] w-full resize-none rounded-xl border px-4 py-3 text-white placeholder:text-white/40 focus:outline-none ${styles.input}`}
-            name="message"
-            placeholder="Tell me what you're building."
+            className={`min-h-[140px] w-full resize-none rounded-xl border px-4 py-3 text-glass-highlight placeholder:text-glass-highlight/40 focus:outline-none ${styles.input}`}
+            name="message"            placeholder="Tell me what you're building."
             required
           />
         </label>

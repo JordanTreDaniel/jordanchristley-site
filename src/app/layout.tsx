@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Fredoka, Nunito_Sans } from "next/font/google";
 import Nav from "@/components/Nav";
 import "./globals.css";
@@ -16,6 +16,10 @@ const nunitoSans = Nunito_Sans({
 });
 
 const siteUrl = "https://jordanchristley.com";
+
+export const viewport: Viewport = {
+  themeColor: "#071B18",
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -55,6 +59,9 @@ export const metadata: Metadata = {
     title: "Jordan Christley — AI Consultant & Software Engineer in Houston, TX",
     description:
       "Jordan Christley is a 10+ year self-taught software engineer in Houston, TX building AI tools, web apps, and creative technology through Emerald Technology Consulting.",
+    images: [
+      { url: "/opengraph-image.png", width: 1200, height: 630, alt: "Jordan Christley" },
+    ],
   },
   twitter: {
     card: "summary_large_image",
@@ -62,6 +69,7 @@ export const metadata: Metadata = {
     description:
       "Jordan Christley is a 10+ year self-taught software engineer in Houston, TX building AI tools, web apps, and creative technology.",
     creator: "@jordanchristley",
+    images: ["/opengraph-image.png"],
   },
   robots: {
     index: true,
@@ -141,7 +149,7 @@ export default function RootLayout({
         <meta httpEquiv="X-Frame-Options" content="DENY" />
         <meta httpEquiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
       </head>
-      <body className={`${fredoka.variable} ${nunitoSans.variable} antialiased pt-16`}>
+      <body className={`${fredoka.variable} ${nunitoSans.variable} antialiased pt-16 bg-obsidian text-glass-highlight`}>
         <Nav />
         {children}
       </body>

@@ -9,8 +9,8 @@ export const metadata: Metadata = {
   title: "Services — AI Integration, Web Development & Digital Transformation in Houston, TX",
   description: "Full-spectrum technology services for Houston businesses: AI integration, custom web development, product engineering, experience design, platform hardening, and digital transformation.",
   keywords: ["AI services Houston", "web development services Houston", "digital transformation Houston", "product engineering Houston", "experience design Houston", "platform hardening Houston", "custom software Houston"],
-  openGraph: { type: "website", locale: "en_US", url: `${siteUrl}/services/`, siteName: "Jordan Christley", title: "Services — Houston, TX", description: "Full-spectrum technology services for Houston businesses.", images: [{ url: `${siteUrl}/og-image.png`, width: 1200, height: 630, alt: "Services Houston TX" }] },
-  twitter: { card: "summary_large_image", title: "Services — Houston, TX", description: "Full-spectrum technology services for Houston businesses.", images: [`${siteUrl}/og-image.png`], creator: "@jordanchristley" },
+  openGraph: { type: "website", locale: "en_US", url: `${siteUrl}/services/`, siteName: "Jordan Christley", title: "Services — Houston, TX", description: "Full-spectrum technology services for Houston businesses." },
+  twitter: { card: "summary_large_image", title: "Services — Houston, TX", description: "Full-spectrum technology services for Houston businesses.", creator: "@jordanchristley" },
   alternates: { canonical: `${siteUrl}/services/` },
   robots: { index: true, follow: true },
 };
@@ -26,7 +26,7 @@ const services = [
 
 export default function ServicesPage() {
   return (
-    <main className="min-h-screen bg-[#050a07] text-white">
+    <main className="min-h-screen bg-obsidian text-glass-highlight">
       <div className="mx-auto max-w-6xl px-6 py-16 lg:py-24">
         <div className="max-w-3xl">
           <Link href="/" className="text-sm text-emerald-400/80 hover:text-emerald-300">← Home</Link>
@@ -55,7 +55,7 @@ export default function ServicesPage() {
           <div className="mt-6 space-y-4 text-sm text-emerald-50/80">
             {[{ t: "Discovery call", d: "We talk through your business, your challenges, and what success looks like." }, { t: "Scoped proposal", d: "Clear scope with milestones, timelines, and pricing." }, { t: "Sprint delivery", d: "Two-week cycles with working demos at the end of each sprint." }, { t: "Launch & optimize", d: "Ship with confidence, then iterate based on real usage data." }].map((step) => (
               <div key={step.t} className="rounded-2xl border border-emerald-300/10 bg-emerald-950/60 px-5 py-4">
-                <p className="font-semibold text-white">{step.t}</p>
+                <p className="font-semibold text-glass-highlight">{step.t}</p>
                 <p className="mt-1">{step.d}</p>
               </div>
             ))}

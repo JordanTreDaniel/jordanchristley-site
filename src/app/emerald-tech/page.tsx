@@ -5,10 +5,22 @@ import LogoCloud from "@/components/LogoCloud";
 import JourneyPage from "@/components/JourneyPage";
 import PortfolioCard from "@/components/PortfolioCard";
 
+const siteUrl = "https://jordanchristley.com";
+
 export const metadata: Metadata = {
   title: "Emerald Technology Consulting",
   description:
     "Emerald Technology Consulting partners with businesses to design and deliver modern web products, platforms, and digital experiences.",
+  alternates: { canonical: `${siteUrl}/emerald-tech` },
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: `${siteUrl}/emerald-tech`,
+    siteName: "Jordan Christley",
+    title: "Jordan Christley — AI Consultant & Software Engineer in Houston, TX",
+    description:
+      "Jordan Christley is a 10+ year self-taught software engineer in Houston, TX building AI tools, web apps, and creative technology through Emerald Technology Consulting.",
+  },
 };
 
 const services = [
@@ -48,7 +60,7 @@ const engagement = [
 
 export default function EmeraldTechPage() {
   return (
-    <main className="relative min-h-screen bg-[#050a07] text-white">
+    <main className="relative min-h-screen bg-obsidian text-glass-highlight">
       <JourneyPage />
 
       <div className="relative mx-auto flex w-full max-w-6xl flex-col gap-16 px-6 py-16 lg:py-24">

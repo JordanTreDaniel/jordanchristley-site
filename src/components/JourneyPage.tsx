@@ -268,7 +268,7 @@ export default function JourneyPage() {
           ))}
           <button
             onClick={scrollToBottom}
-            className="rounded-full border border-emerald-300/30 px-4 py-2 text-xs uppercase tracking-[0.2em] text-emerald-200/80 transition hover:border-emerald-200/50"
+            className="rounded-full border border-emerald-300/25 px-4 py-2 text-xs uppercase tracking-[0.2em] text-emerald-200/80 transition hover:border-emerald-200/50"
           >
             Get in touch
           </button>
@@ -294,7 +294,7 @@ export default function JourneyPage() {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: "100%" }}
             transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-            className="fixed inset-0 z-40 flex flex-col items-center justify-center gap-6 bg-[#050a07]/95 backdrop-blur-xl"
+            className="fixed inset-0 z-40 flex flex-col items-center justify-center gap-6 bg-emerald-950/95 backdrop-blur-xl"
           >
             <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-emerald-400/20">
               <span className="text-2xl text-emerald-300">◆</span>
@@ -314,7 +314,7 @@ export default function JourneyPage() {
             ))}
             <button
               onClick={scrollToBottom}
-              className="mt-4 rounded-full border border-emerald-300/30 px-6 py-3 text-xs uppercase tracking-[0.2em] text-emerald-200"
+              className="mt-4 rounded-full border border-emerald-300/25 px-6 py-3 text-xs uppercase tracking-[0.2em] text-emerald-200"
             >
               Get in touch
             </button>

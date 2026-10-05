@@ -38,9 +38,9 @@ export default function Home() {
               detail: "From pitch to product, I stay close to the vision.",
             },
           ].map((item) => (
-            <div key={item.title} className="rounded-2xl border border-emerald-300/15 bg-emerald-950/30 p-5 shadow-lg shadow-emerald-900/30 backdrop-blur-md">
-              <p className="text-lg font-semibold text-white">{item.title}</p>
-              <p className="mt-2 text-sm text-white/60">{item.detail}</p>
+            <div key={item.title} className="rounded-2xl border border-emerald-300/15 bg-emerald-950/30 p-5 shadow-[0_12px_40px_-12px_rgba(7,27,24,0.45),inset_0_1px_0_0_rgba(215,255,227,0.06)] backdrop-blur-md">
+              <p className="text-lg font-semibold text-glass-highlight">{item.title}</p>
+              <p className="mt-2 text-sm text-glass-highlight/60">{item.detail}</p>
             </div>
           ))}
         </section>
@@ -51,7 +51,7 @@ export default function Home() {
             description="Drop a note and I'll follow up with next steps. This form is ready to connect once you add your preferred email delivery."
             cta="Send a note"
             note="No email address is exposed yet."
-            tone="neutral"
+            tone="emerald"
           />
         </section>
       </div>

@@ -1,9 +1,9 @@
 "use client";
 
-import { LiquidMetal, liquidMetalPresets } from '@paper-design/shaders-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Card } from '@/components/ui/card';
+import Velaris from '@/components/Velaris';
 import { motion } from 'framer-motion';
 
 interface LiquidMetalHeroProps {
@@ -56,12 +56,9 @@ export default function LiquidMetalHero({
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      <LiquidMetal
-        {...liquidMetalPresets[2]}
-        style={{ position: "fixed", inset: 0, zIndex: -10 }}
-      />
+      <Velaris height="100%" className="absolute inset-0" />
 
-      <div className="container mx-auto px-6 lg:px-8 max-w-7xl">
+      <div className="relative z-10 container mx-auto px-6 lg:px-8 max-w-7xl">
         <motion.div
           className="text-center space-y-8"
           variants={containerVariants}
@@ -87,14 +84,14 @@ export default function LiquidMetalHero({
             <motion.h1
               role="heading"
               aria-level={1}
-              className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold text-foreground leading-tight tracking-tight"
+              className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold text-glass-highlight leading-tight tracking-tight"
               variants={itemVariants}
             >
               {title}
             </motion.h1>
 
             <motion.p
-              className="max-w-3xl mx-auto text-xl sm:text-2xl text-foreground/90 leading-relaxed"
+              className="max-w-3xl mx-auto text-xl sm:text-2xl text-glass-highlight/90 leading-relaxed"
               variants={itemVariants}
             >
               {subtitle}
@@ -156,7 +153,7 @@ export default function LiquidMetalHero({
                             delay: 0.8 + (index * 0.1)
                           }}
                         >
-                          <p className="text-foreground/90 font-medium text-lg">
+                          <p className="text-glass-highlight/90 font-medium text-lg">
                             {feature}
                           </p>
                         </motion.div>

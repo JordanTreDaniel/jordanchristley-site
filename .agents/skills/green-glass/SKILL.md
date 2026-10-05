@@ -1,44 +1,84 @@
 # Green Glass Design System
 
-Emerald-tinted glassmorphism for dark-themed UIs. Provides consistent, reusable glass effects with a green glow aesthetic.
+Dark emerald glassmorphism for jordanchristley-site. Site and logo share one material language: dark emerald → emerald → electric green → mint-white. Source of truth for colors, glass material, and Tailwind token remap.
+
+## Locked Brand Palette
+
+| Role | Hex | Notes |
+|---|---|---|
+| Obsidian | `#071B18` | Darkest background / emerald-950 |
+| Deep Emerald | `#063F32` | Large dark mass / emerald-700–900 |
+| Emerald | `#087A55` | Mid green / emerald-500–600 |
+| Living Green | `#18D878` | Bright accent / emerald-300–400 |
+| Electric Mint | `#7DFF9A` | Hot highlight / emerald-100–200 |
+| Glass highlight | `#D7FFE3` | Near-white edge / emerald-50 |
+
+NO gold/yellow accents anywhere. Gold `#d4a843` is removed from the system.
+
+### Ratio Discipline
+
+60–70% deep green/obsidian → 20–30% emerald/teal → 5–10% bright green → tiny near-white. Bright green lives INSIDE dark mass, never competing equally with it.
+
+### Material Language
+
+`deep translucent green glass → internal refraction → localized bright green → sharp edge highlight`
+
+NOT green-gradient → glow → green-gradient.
+
+### Background Glow
+
+Very large, very soft, dark emerald/teal, low opacity, concentrated behind the object. NEVER brighter than the brightest facets. Atmosphere, not fog.
+
+## Tailwind v4 Emerald Scale Remap
+
+Remapped in `@theme` in `src/app/globals.css` — do not treat these as stock Tailwind:
+
+- `emerald-50` = `#D7FFE3` (glass highlight)
+- `emerald-100/200` = `#7DFF9A` (electric mint)
+- `emerald-300/400` = `#18D878` (living green)
+- `emerald-500/600` = `#087A55` (emerald)
+- `emerald-700/800/900` = `#063F32` (deep emerald)
+- `emerald-950` = `#071B18` (obsidian)
+
+Custom tokens: `bg-obsidian`, `bg-deep-emerald`, `text-living-green`, `text-electric-mint`, `text-glass-highlight`.
 
 ## Design Tokens
 
 | Token | Value | Usage |
 |---|---|---|
-| `glass-bg` | `rgba(5, 46, 22, 0.3)` | Card/panel backgrounds (emerald-950 at 30%) |
-| `glass-border` | `rgba(110, 231, 183, 0.15)` | Subtle emerald border (emerald-300 at 15%) |
+| `glass-bg` | `rgba(6, 63, 50, 0.3)` | Card/panel backgrounds (deep emerald at 30%) |
+| `glass-border` | `rgba(24, 216, 120, 0.15)` | Subtle living-green border |
 | `glass-blur` | `blur(12px)` | Backdrop blur intensity |
-| `glass-shadow` | `0 10px 30px -10px rgba(5, 46, 22, 0.3)` | Emerald-tinted drop shadow |
-| `glass-glow` | `rgba(110, 231, 183, 0.05)` | Inner highlight / top-edge glow |
-| `glass-highlight` | `rgba(110, 231, 183, 0.4)` | Hover border intensity |
+| `glass-shadow` | `0 10px 30px -10px rgba(6, 63, 50, 0.3)` | Deep emerald drop shadow |
+| `glass-glow` | `rgba(24, 216, 120, 0.05)` | Internal refraction / top-edge glow |
+| `glass-highlight` | `rgba(125, 255, 154, 0.4)` | Sharp edge / hover highlight |
 
 ## CSS Classes
 
+Canonical primitives in `src/app/globals.css`:
+
 ### `.glass` — Base glass
-Apply to any element for the foundational glass effect. Use for containers, sections, generic panels.
+Deep translucent green glass on dark. Use for containers, sections, generic panels.
 
 ### `.glass-card` — Card variant
-Rounded corners (1.5rem), inner top-edge highlight via `inset 0 1px 0 0`. Use for content cards, feature panels, project cards.
+Rounded (1.5rem), inner top-edge highlight via `inset 0 1px 0 0`. Content cards, feature panels, project cards.
 
 ### `.glass-pill` — Pill / nav variant
-Fully rounded (9999px), tighter shadow. Use for navigation bars, action buttons, link badges. Has built-in hover state.
+Fully rounded (9999px), tighter shadow. Nav bars, action buttons, link badges. Has built-in hover.
 
 ### `.glass-badge` — Badge / tag variant
-Smaller, lighter. emerald-300 at 5% background. Use for skill tags, status indicators, labels. Has built-in hover state.
+Smaller, lighter (living green at 5% bg). Skill tags, status indicators, labels. Has built-in hover.
 
 ### `.glass-btn-primary` — Primary action button
-Solid emerald-300 background with deep emerald shadow. Use for primary CTAs. Hover lifts and brightens.
+Solid living green (`emerald-300`) on deep emerald shadow. Primary CTAs. Hover lifts and brightens toward mint.
 
 ### `.glass-btn-outline` — Outline action button
-Transparent with emerald border. Use for secondary CTAs, ghost actions. Has built-in hover state.
+Transparent with living-green border. Secondary CTAs, ghost actions. Has built-in hover.
 
 ## Tailwind Equivalents
 
-If you prefer inline Tailwind over CSS classes:
-
 ```
-Card:    rounded-3xl border border-emerald-300/15 bg-emerald-950/30 backdrop-blur-md shadow-lg shadow-emerald-900/30
+Card:    rounded-3xl border border-emerald-300/15 bg-deep-emerald/30 backdrop-blur-md shadow-lg shadow-emerald-900/30
 Pill:    rounded-full border border-emerald-300/20 bg-emerald-300/5 backdrop-blur-md shadow-sm shadow-emerald-900/20
 Badge:   rounded-full border border-emerald-300/20 bg-emerald-300/5 backdrop-blur-md text-xs shadow-sm shadow-emerald-900/20
 Btn:     bg-emerald-300 text-emerald-950 hover:bg-emerald-200 shadow-lg shadow-emerald-900/40
@@ -47,15 +87,24 @@ Outline: border border-emerald-300/20 text-emerald-200 bg-emerald-300/5 hover:bg
 
 ## When to Use
 
-- **Dark backgrounds** (`bg-neutral-950` / `bg-[#050a07]`) — glass works best on dark
+- **Dark backgrounds** — `bg-obsidian` (`#071B18`) or `bg-deep-emerald` (`#063F32`); glass works best on dark
 - **Floating elements** — nav bars, modals, dropdowns, tooltips
 - **Content cards** — feature cards, project cards, experience entries
 - **Interactive elements** — buttons, badges, links with hover states
 - **Avoid on light backgrounds** — the emerald tint reads poorly on white
+- **Keep ratio discipline** — bright green stays nested inside dark mass
+
+## Fonts
+
+Fredoka (display/headings) + Nunito Sans (body). NOT Space_Grotesk.
+
+## Hero Background
+
+Velaris WebGL green-glow header (`src/components/Velaris.tsx`) — dark emerald atmosphere. NOT silver liquid metal.
 
 ## Integration
 
-Defined in `src/app/globals.css`. UI components (`src/components/ui/`) use Tailwind equivalents inline. Both approaches are kept in sync.
+Defined in `src/app/globals.css` (`@theme` remap + `.glass*` primitives). UI components (`src/components/ui/`) use Tailwind equivalents inline. Both approaches are kept in sync.
 
 ## Examples
 
@@ -76,4 +125,9 @@ Defined in `src/app/globals.css`. UI components (`src/components/ui/`) use Tailw
 
 <!-- Primary CTA -->
 <button class="glass-btn-primary rounded-full px-6 py-3 font-semibold">Hire me</button>
+
+<!-- Obsidian page shell -->
+<main class="bg-obsidian">
+  <div class="glass-card p-6">...</div>
+</main>
 ```

@@ -1,36 +1,60 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# jordanchristley-site
 
-## Getting Started
+Personal site and Emerald Technology Consulting marketing site for **Jordan Christley** — AI consultant & software engineer based in Houston, TX.
 
-First, run the development server:
+## Stack
+
+- **Next.js 16** (App Router) + **React 19**
+- **Tailwind CSS 4**
+- **framer-motion**
+- **TypeScript**
+- **Static export** (`output: "export"`) — no server runtime
+
+## Design system
+
+Obsidian / Emerald / Living Green brand palette with a green-glass material language (deep translucent green glass, razor living-green borders, glass-highlight insets). Display type is **Fredoka**; body type is **Nunito Sans** — both loaded via `next/font` in `src/app/layout.tsx`.
+
+The emerald color scale is remapped to brand hexes in `src/app/globals.css` (e.g. `emerald-300` → `#18D878`, `emerald-950` → `#071B18`). Explicit brand tokens (`bg-obsidian`, `text-living-green`, etc.) are also available.
+
+Full material rules live in `.agents/skills/green-glass/SKILL.md`.
+
+## Getting started
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Build
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+```
 
-## Learn More
+Produces a static export in `out/`.
 
-To learn more about Next.js, take a look at the following resources:
+## Deploy
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+GitHub Pages via GitHub Actions. The workflow is `.github/workflows/deploy.yml` — it triggers on **push to `main`** (and `workflow_dispatch`). It installs deps with `npm ci`, runs `npm run build`, uploads `out/` as a Pages artifact, and deploys it.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Routes
 
-## Deploy on Vercel
+| Route | What it is |
+|---|---|
+| `/` | Home |
+| `/about` | About Jordan |
+| `/resume` | Resume |
+| `/emerald-tech` | Emerald Technology Consulting |
+| `/services` | Services overview |
+| `/services/ai-integration-houston` | AI integration |
+| `/services/custom-web-development-houston` | Custom web development |
+| `/services/digital-transformation-houston` | Digital transformation |
+| `/services/experience-design-houston` | Experience design |
+| `/services/platform-hardening-houston` | Platform hardening |
+| `/services/product-engineering-houston` | Product engineering |
+| `/blog` | Blog index |
+| `/blog/*` | Individual posts (see `src/app/blog/`) |
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+SEO metadata routes: `robots.ts` and `sitemap.ts` in `src/app/` (static-export compatible).

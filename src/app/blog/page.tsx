@@ -7,8 +7,8 @@ export const metadata: Metadata = {
   title: "Blog — AI, Web Development & Tech Insights in Houston, TX",
   description: "Insights on AI integration, web development, digital transformation, and technology strategy for Houston businesses.",
   keywords: ["Houston tech blog", "AI blog Houston", "web development blog Houston", "digital transformation blog", "AI consultant blog"],
-  openGraph: { type: "website", locale: "en_US", url: `${siteUrl}/blog/`, siteName: "Jordan Christley", title: "Blog — Houston, TX", description: "Insights on AI, web development, and digital transformation.", images: [{ url: `${siteUrl}/og-image.png`, width: 1200, height: 630, alt: "Blog Houston TX" }] },
-  twitter: { card: "summary_large_image", title: "Blog — Houston, TX", description: "Insights on AI, web development, and digital transformation.", images: [`${siteUrl}/og-image.png`], creator: "@jordanchristley" },
+  openGraph: { type: "website", locale: "en_US", url: `${siteUrl}/blog/`, siteName: "Jordan Christley", title: "Blog — Houston, TX", description: "Insights on AI, web development, and digital transformation." },
+  twitter: { card: "summary_large_image", title: "Blog — Houston, TX", description: "Insights on AI, web development, and digital transformation.", creator: "@jordanchristley" },
   alternates: { canonical: `${siteUrl}/blog/` },
   robots: { index: true, follow: true },
 };
@@ -23,7 +23,7 @@ const posts = [
 
 export default function BlogPage() {
   return (
-    <main className="min-h-screen bg-[#050a07] text-white">
+    <main className="min-h-screen bg-obsidian text-glass-highlight">
       <div className="mx-auto max-w-3xl px-6 py-16 lg:py-24">
         <Link href="/" className="text-sm text-emerald-400/80 hover:text-emerald-300">← Home</Link>
         <h1 className="mt-8 text-4xl font-bold tracking-tight lg:text-5xl">Blog</h1>
