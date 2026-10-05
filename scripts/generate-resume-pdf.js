@@ -131,7 +131,6 @@ function buildHTML() {
   const contactParts = [];
   if (CONTACT.email) contactParts.push(`<a href="mailto:${esc(CONTACT.email)}">${esc(CONTACT.email)}</a>`);
   if (CONTACT.phone) contactParts.push(`<span>${esc(CONTACT.phone)}</span>`);
-  if (CONTACT.linkedin) contactParts.push(`<a href="https://${esc(CONTACT.linkedin)}">${esc(CONTACT.linkedin)}</a>`);
   if (CONTACT.github) contactParts.push(`<a href="https://${esc(CONTACT.github)}">${esc(CONTACT.github)}</a>`);
   if (CONTACT.website) contactParts.push(`<a href="https://${esc(CONTACT.website)}">${esc(CONTACT.website)}</a>`);
 
