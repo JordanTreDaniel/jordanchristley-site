@@ -19,7 +19,6 @@ const CONTACT = {
   title: "Full-Stack AI Engineer & Independent Consultant",
   email: "christleyjordan@protonmail.com",
   phone: "832-875-6634",
-  linkedin: "linkedin.com/in/jordan-christley-787729120",
   github: "github.com/JordanTreDaniel",
   website: "jordanchristley.com",
 };
