@@ -13,15 +13,6 @@ export const metadata: Metadata = {
   description:
     "Emerald Technology Consulting partners with businesses to design and deliver modern web products, platforms, and digital experiences.",
   alternates: { canonical: `${siteUrl}/emerald-tech` },
-  openGraph: {
-    type: "website",
-    locale: "en_US",
-    url: `${siteUrl}/emerald-tech`,
-    siteName: "Jordan Christley",
-    title: "Jordan Christley — AI Consultant & Software Engineer in Houston, TX",
-    description:
-      "Jordan Christley is a 10+ year self-taught software engineer in Houston, TX building AI tools, web apps, and creative technology through Emerald Technology Consulting.",
-  },
 };
 
 const services = [

@@ -6,8 +6,6 @@ export const metadata: Metadata = {
   title: "Why Houston Businesses Need an AI Consultant",
   description: "The case for bringing an AI consultant into your Houston business — and what to look for in the right partner.",
   keywords: ["AI consultant Houston", "AI advisor Houston", "AI strategy Houston", "Houston AI expert", "AI consulting Houston TX"],
-  openGraph: { type: "article", locale: "en_US", url: `${siteUrl}/blog/why-houston-businesses-need-an-ai-consultant/`, siteName: "Jordan Christley", title: "Why Houston Businesses Need an AI Consultant", description: "The case for bringing an AI consultant into your Houston business — and what to look for in the right partner.", publishedTime: "2026-09-15T00:00:00Z", authors: ["Jordan Christley"] },
-  twitter: { card: "summary_large_image", title: "Why Houston Businesses Need an AI Consultant", description: "The case for bringing an AI consultant into your Houston business — and what to look for in the right partner.", creator: "@jordanchristley" },
   alternates: { canonical: `${siteUrl}/blog/why-houston-businesses-need-an-ai-consultant/` },
   robots: { index: true, follow: true },
 };

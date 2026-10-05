@@ -6,8 +6,6 @@ export const metadata: Metadata = {
   title: "Custom Web Development for Houston Businesses — Houston, TX | Jordan Christley",
   description: "Custom web application development in Houston, TX — React, Next.js, full-stack apps built for performance and scale.",
   keywords: ["web development Houston", "custom web app Houston", "React developer Houston", "Next.js developer Houston", "full-stack developer Houston"],
-  openGraph: { type: "website", locale: "en_US", url: `${siteUrl}/services/custom-web-development-houston/`, siteName: "Jordan Christley", title: "Custom Web Development for Houston Businesses", description: "Custom web application development in Houston, TX — React, Next.js, full-stack apps built for performance and scale." },
-  twitter: { card: "summary_large_image", title: "Custom Web Development for Houston Businesses", description: "Custom web application development in Houston, TX — React, Next.js, full-stack apps built for performance and scale.", creator: "@jordanchristley" },
   alternates: { canonical: `${siteUrl}/services/custom-web-development-houston/` },
   robots: { index: true, follow: true },
 };

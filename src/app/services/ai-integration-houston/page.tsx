@@ -6,8 +6,6 @@ export const metadata: Metadata = {
   title: "AI Integration for Houston Businesses — Houston, TX | Jordan Christley",
   description: "AI integration services for Houston businesses — custom LLMs, intelligent workflows, and production-ready AI systems by Jordan Christley.",
   keywords: ["AI integration Houston", "AI consultant Houston", "LLM integration Houston", "custom AI development Houston", "AI automation Houston"],
-  openGraph: { type: "website", locale: "en_US", url: `${siteUrl}/services/ai-integration-houston/`, siteName: "Jordan Christley", title: "AI Integration for Houston Businesses", description: "AI integration services for Houston businesses — custom LLMs, intelligent workflows, and production-ready AI systems by Jordan Christley." },
-  twitter: { card: "summary_large_image", title: "AI Integration for Houston Businesses", description: "AI integration services for Houston businesses — custom LLMs, intelligent workflows, and production-ready AI systems by Jordan Christley.", creator: "@jordanchristley" },
   alternates: { canonical: `${siteUrl}/services/ai-integration-houston/` },
   robots: { index: true, follow: true },
 };

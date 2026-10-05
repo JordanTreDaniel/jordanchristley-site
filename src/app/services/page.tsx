@@ -9,8 +9,6 @@ export const metadata: Metadata = {
   title: "Services — AI Integration, Web Development & Digital Transformation in Houston, TX",
   description: "Full-spectrum technology services for Houston businesses: AI integration, custom web development, product engineering, experience design, platform hardening, and digital transformation.",
   keywords: ["AI services Houston", "web development services Houston", "digital transformation Houston", "product engineering Houston", "experience design Houston", "platform hardening Houston", "custom software Houston"],
-  openGraph: { type: "website", locale: "en_US", url: `${siteUrl}/services/`, siteName: "Jordan Christley", title: "Services — Houston, TX", description: "Full-spectrum technology services for Houston businesses." },
-  twitter: { card: "summary_large_image", title: "Services — Houston, TX", description: "Full-spectrum technology services for Houston businesses.", creator: "@jordanchristley" },
   alternates: { canonical: `${siteUrl}/services/` },
   robots: { index: true, follow: true },
 };

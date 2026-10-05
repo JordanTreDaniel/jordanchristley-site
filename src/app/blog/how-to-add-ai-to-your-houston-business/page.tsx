@@ -6,8 +6,6 @@ export const metadata: Metadata = {
   title: "How to Add AI to Your Houston Business",
   description: "A practical guide for Houston business owners looking to integrate AI into their operations — from quick wins to full-scale automation.",
   keywords: ["AI for business Houston", "add AI to business", "AI integration Houston", "AI automation Houston", "Houston business AI"],
-  openGraph: { type: "article", locale: "en_US", url: `${siteUrl}/blog/how-to-add-ai-to-your-houston-business/`, siteName: "Jordan Christley", title: "How to Add AI to Your Houston Business", description: "A practical guide for Houston business owners looking to integrate AI into their operations — from quick wins to full-scale automation.", publishedTime: "2026-09-15T00:00:00Z", authors: ["Jordan Christley"] },
-  twitter: { card: "summary_large_image", title: "How to Add AI to Your Houston Business", description: "A practical guide for Houston business owners looking to integrate AI into their operations — from quick wins to full-scale automation.", creator: "@jordanchristley" },
   alternates: { canonical: `${siteUrl}/blog/how-to-add-ai-to-your-houston-business/` },
   robots: { index: true, follow: true },
 };

@@ -8,8 +8,6 @@ export const metadata: Metadata = {
   title: "About — Jordan Christley, AI Consultant & Software Engineer in Houston, TX",
   description: "Jordan Christley is a 10+ year self-taught software engineer and AI consultant in Houston, TX. Learn about his journey building Emerald Technology Consulting.",
   keywords: ["Jordan Christley Houston", "AI consultant Houston", "software engineer Houston", "self-taught developer Houston", "Emerald Technology Consulting", "Houston tech entrepreneur"],
-  openGraph: { type: "profile", locale: "en_US", url: `${siteUrl}/about/`, siteName: "Jordan Christley", title: "About — Jordan Christley", description: "Jordan Christley is a 10+ year self-taught software engineer and AI consultant in Houston, TX." },
-  twitter: { card: "summary_large_image", title: "About — Jordan Christley", description: "Jordan Christley is a 10+ year self-taught software engineer and AI consultant in Houston, TX.", creator: "@jordanchristley" },
   alternates: { canonical: `${siteUrl}/about/` },
   robots: { index: true, follow: true },
 };

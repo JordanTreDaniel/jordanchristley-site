@@ -6,8 +6,6 @@ export const metadata: Metadata = {
   title: "Digital Transformation for Houston Businesses — Houston, TX | Jordan Christley",
   description: "Digital transformation services in Houston, TX — legacy modernization, system integration, and technology strategy.",
   keywords: ["digital transformation Houston", "legacy modernization Houston", "system integration Houston", "cloud migration Houston", "process automation Houston"],
-  openGraph: { type: "website", locale: "en_US", url: `${siteUrl}/services/digital-transformation-houston/`, siteName: "Jordan Christley", title: "Digital Transformation for Houston Businesses", description: "Digital transformation services in Houston, TX — legacy modernization, system integration, and technology strategy." },
-  twitter: { card: "summary_large_image", title: "Digital Transformation for Houston Businesses", description: "Digital transformation services in Houston, TX — legacy modernization, system integration, and technology strategy.", creator: "@jordanchristley" },
   alternates: { canonical: `${siteUrl}/services/digital-transformation-houston/` },
   robots: { index: true, follow: true },
 };

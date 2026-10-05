@@ -6,8 +6,6 @@ export const metadata: Metadata = {
   title: "Best Web Development Practices for Houston in 2026",
   description: "Modern web development standards every Houston business should follow — performance, security, accessibility, and beyond.",
   keywords: ["web development Houston 2026", "web development best practices", "Houston web design", "web security Houston", "Next.js development Houston"],
-  openGraph: { type: "article", locale: "en_US", url: `${siteUrl}/blog/best-web-development-practices-houston-2026/`, siteName: "Jordan Christley", title: "Best Web Development Practices for Houston in 2026", description: "Modern web development standards every Houston business should follow — performance, security, accessibility, and beyond.", publishedTime: "2026-09-15T00:00:00Z", authors: ["Jordan Christley"] },
-  twitter: { card: "summary_large_image", title: "Best Web Development Practices for Houston in 2026", description: "Modern web development standards every Houston business should follow — performance, security, accessibility, and beyond.", creator: "@jordanchristley" },
   alternates: { canonical: `${siteUrl}/blog/best-web-development-practices-houston-2026/` },
   robots: { index: true, follow: true },
 };

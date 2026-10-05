@@ -6,8 +6,6 @@ export const metadata: Metadata = {
   title: "Product Engineering for Houston Startups & Businesses — Houston, TX | Jordan Christley",
   description: "Product engineering services in Houston, TX — MVP development, sprint-based delivery, and launch support.",
   keywords: ["product engineering Houston", "MVP development Houston", "startup developer Houston", "sprint delivery Houston", "CTO as a service Houston"],
-  openGraph: { type: "website", locale: "en_US", url: `${siteUrl}/services/product-engineering-houston/`, siteName: "Jordan Christley", title: "Product Engineering for Houston Startups & Businesses", description: "Product engineering services in Houston, TX — MVP development, sprint-based delivery, and launch support." },
-  twitter: { card: "summary_large_image", title: "Product Engineering for Houston Startups & Businesses", description: "Product engineering services in Houston, TX — MVP development, sprint-based delivery, and launch support.", creator: "@jordanchristley" },
   alternates: { canonical: `${siteUrl}/services/product-engineering-houston/` },
   robots: { index: true, follow: true },
 };

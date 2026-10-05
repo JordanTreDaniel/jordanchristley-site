@@ -6,8 +6,6 @@ export const metadata: Metadata = {
   title: "Custom AI Development for Houston Startups",
   description: "Why Houston startups should build custom AI solutions instead of relying on generic SaaS tools — and how to get started.",
   keywords: ["AI development Houston", "startup AI Houston", "custom AI Houston", "Houston startup tech", "build AI Houston"],
-  openGraph: { type: "article", locale: "en_US", url: `${siteUrl}/blog/custom-ai-development-for-houston-startups/`, siteName: "Jordan Christley", title: "Custom AI Development for Houston Startups", description: "Why Houston startups should build custom AI solutions instead of relying on generic SaaS tools — and how to get started.", publishedTime: "2026-09-15T00:00:00Z", authors: ["Jordan Christley"] },
-  twitter: { card: "summary_large_image", title: "Custom AI Development for Houston Startups", description: "Why Houston startups should build custom AI solutions instead of relying on generic SaaS tools — and how to get started.", creator: "@jordanchristley" },
   alternates: { canonical: `${siteUrl}/blog/custom-ai-development-for-houston-startups/` },
   robots: { index: true, follow: true },
 };

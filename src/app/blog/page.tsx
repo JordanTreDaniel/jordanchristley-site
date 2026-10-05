@@ -7,8 +7,6 @@ export const metadata: Metadata = {
   title: "Blog — AI, Web Development & Tech Insights in Houston, TX",
   description: "Insights on AI integration, web development, digital transformation, and technology strategy for Houston businesses.",
   keywords: ["Houston tech blog", "AI blog Houston", "web development blog Houston", "digital transformation blog", "AI consultant blog"],
-  openGraph: { type: "website", locale: "en_US", url: `${siteUrl}/blog/`, siteName: "Jordan Christley", title: "Blog — Houston, TX", description: "Insights on AI, web development, and digital transformation." },
-  twitter: { card: "summary_large_image", title: "Blog — Houston, TX", description: "Insights on AI, web development, and digital transformation.", creator: "@jordanchristley" },
   alternates: { canonical: `${siteUrl}/blog/` },
   robots: { index: true, follow: true },
 };

@@ -6,8 +6,6 @@ export const metadata: Metadata = {
   title: "Experience Design for Houston Businesses — Houston, TX | Jordan Christley",
   description: "Experience design and UI/UX services in Houston, TX — interfaces that convert, motion that delights, and design systems that scale.",
   keywords: ["experience design Houston", "UI UX designer Houston", "web design Houston TX", "UI design Houston", "conversion design Houston"],
-  openGraph: { type: "website", locale: "en_US", url: `${siteUrl}/services/experience-design-houston/`, siteName: "Jordan Christley", title: "Experience Design for Houston Businesses", description: "Experience design and UI/UX services in Houston, TX — interfaces that convert, motion that delights, and design systems that scale." },
-  twitter: { card: "summary_large_image", title: "Experience Design for Houston Businesses", description: "Experience design and UI/UX services in Houston, TX — interfaces that convert, motion that delights, and design systems that scale.", creator: "@jordanchristley" },
   alternates: { canonical: `${siteUrl}/services/experience-design-houston/` },
   robots: { index: true, follow: true },
 };

@@ -6,8 +6,6 @@ export const metadata: Metadata = {
   title: "Platform Hardening for Houston Businesses — Houston, TX | Jordan Christley",
   description: "Platform hardening services in Houston, TX — performance optimization, security hardening, and observability for production systems.",
   keywords: ["platform hardening Houston", "performance optimization Houston", "security audit Houston", "web application security Houston", "DevOps Houston TX"],
-  openGraph: { type: "website", locale: "en_US", url: `${siteUrl}/services/platform-hardening-houston/`, siteName: "Jordan Christley", title: "Platform Hardening for Houston Businesses", description: "Platform hardening services in Houston, TX — performance optimization, security hardening, and observability for production systems." },
-  twitter: { card: "summary_large_image", title: "Platform Hardening for Houston Businesses", description: "Platform hardening services in Houston, TX — performance optimization, security hardening, and observability for production systems.", creator: "@jordanchristley" },
   alternates: { canonical: `${siteUrl}/services/platform-hardening-houston/` },
   robots: { index: true, follow: true },
 };

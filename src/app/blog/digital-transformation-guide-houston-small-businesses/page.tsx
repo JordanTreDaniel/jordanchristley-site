@@ -6,8 +6,6 @@ export const metadata: Metadata = {
   title: "Digital Transformation Guide for Houston Small Businesses",
   description: "A step-by-step guide to modernizing your Houston small business with digital tools, automation, and cloud infrastructure.",
   keywords: ["digital transformation Houston", "small business technology Houston", "business automation Houston", "cloud migration Houston"],
-  openGraph: { type: "article", locale: "en_US", url: `${siteUrl}/blog/digital-transformation-guide-houston-small-businesses/`, siteName: "Jordan Christley", title: "Digital Transformation Guide for Houston Small Businesses", description: "A step-by-step guide to modernizing your Houston small business with digital tools, automation, and cloud infrastructure.", publishedTime: "2026-09-15T00:00:00Z", authors: ["Jordan Christley"] },
-  twitter: { card: "summary_large_image", title: "Digital Transformation Guide for Houston Small Businesses", description: "A step-by-step guide to modernizing your Houston small business with digital tools, automation, and cloud infrastructure.", creator: "@jordanchristley" },
   alternates: { canonical: `${siteUrl}/blog/digital-transformation-guide-houston-small-businesses/` },
   robots: { index: true, follow: true },
 };
