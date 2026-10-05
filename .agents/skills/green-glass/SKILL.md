@@ -100,7 +100,7 @@ Fredoka (display/headings) + Nunito Sans (body). NOT Space_Grotesk.
 
 ## Hero Background
 
-<!-- DEPRECATED. Velaris WebGL green-glow header (`src/components/Velaris.tsx`) — dark emerald atmosphere. NOT silver liquid metal. -->
+No WebGL/canvas layer. The homepage hero is `src/components/HomeHero.tsx`: a plain full-viewport section (`min-h-screen`, flex-centered) sitting directly on the site's `bg-obsidian` (`#071B18`) page background from the root layout. Visual depth comes from the glass system — green-glass Badge/Button/Card components and `text-glass-highlight` typography on the emerald palette — plus framer-motion entrance animations. Centered content block: badge, headline, subtitle, primary/secondary CTAs, optional feature card. (Historical: a WebGL green-glow canvas header lived here until commit `a67ad75` removed it.)
 
 ## Integration
 

@@ -56,7 +56,7 @@ export default function HomeHero({
   return (
     <section id="home-hero" className="relative min-h-screen flex items-center justify-center overflow-hidden w-full">
 
-      <div className="z-10 item mx-auto px-6 lg:px-8 max-w-7xl">
+      <div className="z-10 mx-auto px-6 lg:px-8 max-w-7xl">
         <motion.div
           className="text-center space-y-8"
           variants={containerVariants}
