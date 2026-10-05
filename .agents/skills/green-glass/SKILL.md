@@ -100,7 +100,7 @@ Fredoka (display/headings) + Nunito Sans (body). NOT Space_Grotesk.
 
 ## Hero Background
 
-Velaris WebGL green-glow header (`src/components/Velaris.tsx`) — dark emerald atmosphere. NOT silver liquid metal.
+<!-- DEPRECATED. Velaris WebGL green-glow header (`src/components/Velaris.tsx`) — dark emerald atmosphere. NOT silver liquid metal. -->
 
 ## Integration
 

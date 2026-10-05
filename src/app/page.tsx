@@ -1,13 +1,13 @@
 "use client";
 
 import ContactForm from "@/components/ContactForm";
-import LiquidMetalHero from "@/components/LiquidMetalHero";
+import HomeHero from "@/components/HomeHero";
 
 export default function Home() {
   return (
-    <main>
-      <LiquidMetalHero
-        badge="Hi, I'm Jordan"
+    <main id="home-page-main" className="mt-28">
+      <HomeHero
+        badge="Hi, I'm Jordan Christley"
         title="Developer &amp; entrepreneur building bold, modern web products."
         subtitle="I design and ship sleek digital experiences, from landing pages to production-ready web apps. Clean, fast, and always a little unexpected."
         primaryCtaLabel="Hire me"

@@ -3,10 +3,9 @@
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Card } from '@/components/ui/card';
-import Velaris from '@/components/Velaris';
 import { motion } from 'framer-motion';
 
-interface LiquidMetalHeroProps {
+interface HomeHeroProps {
   badge?: string;
   title: string;
   subtitle: string;
@@ -17,7 +16,7 @@ interface LiquidMetalHeroProps {
   features?: string[];
 }
 
-export default function LiquidMetalHero({
+export default function HomeHero({
   badge,
   title,
   subtitle,
@@ -26,7 +25,7 @@ export default function LiquidMetalHero({
   onPrimaryCtaClick,
   onSecondaryCtaClick,
   features = [],
-}: LiquidMetalHeroProps) {
+}: HomeHeroProps) {
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -55,10 +54,9 @@ export default function LiquidMetalHero({
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      <Velaris height="100%" className="absolute inset-0" />
+    <section id="home-hero" className="relative min-h-screen flex items-center justify-center overflow-hidden w-full">
 
-      <div className="relative z-10 container mx-auto px-6 lg:px-8 max-w-7xl">
+      <div className="z-10 item mx-auto px-6 lg:px-8 max-w-7xl">
         <motion.div
           className="text-center space-y-8"
           variants={containerVariants}
