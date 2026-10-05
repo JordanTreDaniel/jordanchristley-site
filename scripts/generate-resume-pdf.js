@@ -17,14 +17,14 @@ const fs = require("fs");
 const CONTACT = {
   name: "Jordan Christley",
   title: "Full-Stack AI Engineer & Independent Consultant",
-  email: "jordan@jordanchristley.com",
-  phone: null,
-  linkedin: "linkedin.com/in/jordanchristley",
-  github: "github.com/jordanchristley",
+  email: "christleyjordan@protonmail.com",
+  phone: "832-875-6634",
+  linkedin: "linkedin.com/in/jordan-christley-787729120",
+  github: "github.com/JordanTreDaniel",
   website: "jordanchristley.com",
 };
 
-const SUMMARY = `AI-native full-stack engineer building production systems that combine LLM orchestration, autonomous agent design, and Cloudflare-native infrastructure into end-to-end business tools. Specializes in RAG pipelines, multi-agent workflow orchestration, and browser automation.`;
+const SUMMARY = `AI-native full-stack engineer building production systems that combine LLM orchestration, autonomous agent design, and Cloudflare-native infrastructure into end-to-end business tools. Specializes in RAG pipelines, multi-agent workflow orchestration, and browser automation. Currently running an independent consulting operation delivering AI-powered solutions across real estate tech, CRM, and business automation.`;
 
 const SKILL_GROUPS = [
   { group: "Languages", items: ["Python", "TypeScript", "Rust", "JavaScript", "SQL"] },
@@ -33,7 +33,7 @@ const SKILL_GROUPS = [
   { group: "AI / ML", items: ["RAG Pipelines", "LLM Orchestration (Claude, OpenAI)", "Vector Databases", "Embeddings", "AI Agent Design", "Prompt Engineering"] },
   { group: "Infrastructure", items: ["Cloudflare Workers / D1 / R2 / KV", "AWS (Lambda, S3, RDS, CloudFormation)", "Docker", "Kubernetes", "Terraform", "GCP"] },
   { group: "Databases", items: ["PostgreSQL", "SQLite / D1", "Redis", "Supabase", "MongoDB"] },
-  { group: "Automation", items: ["Playwright", "Puppeteer", "FFmpeg", "Email Automation", "Notion API"] },
+  { group: "Automation", items: ["Playwright", "Puppeteer", "FFmpeg", "Email Automation (Gmail/IMAP)", "Notion API"] },
   { group: "Domains", items: ["Real Estate Tech", "CRM", "SaaS", "Billing / Stripe", "Meeting Transcription & Task Extraction"] },
 ];
 
@@ -43,12 +43,15 @@ const EXPERIENCE = [
     role: "Independent Consultant",
     start: "2022",
     end: "Present",
+    location: "Houston, TX",
     bullets: [
-      "Architected and shipped AI-powered systems combining LLM orchestration, autonomous agent design, and Cloudflare-native infrastructure for end-to-end business tooling.",
-      "Built multi-agent workflow engines with real-time collaboration, review dashboards, and automated task extraction from meeting transcripts.",
-      "Developed full-stack real estate technology platforms with deal tracking, CRM integration, and automated outreach pipelines.",
-      "Designed RAG pipelines with vector databases and embeddings for semantic search across business knowledge bases.",
-      "Delivered Cloudflare Workers / D1 / R2 / KV serverless stacks with sub-50ms cold starts and zero-ops maintenance.",
+      "Architect and deploy AI-native business automation systems combining LLM orchestration, web scraping, email pipelines, and payment processing",
+      "Build autonomous agent infrastructure on GCP with multi-tool orchestration, browser automation, and wave-based sub-agent dispatch",
+      "Develop production real estate tech: deal pipelines with AI-powered candidate scoring, automated email ingestion, investor matching, and skip-tracing",
+      "Implement end-to-end meeting-to-task pipelines — transcription, AI extraction, Notion CRM ingestion, and adversarial review workflows",
+      "Design Cloudflare-native infrastructure (Workers, D1, R2, KV) with Terraform infrastructure-as-code",
+      "Build Stripe-integrated invoicing, billing, and subscription management systems",
+      "Create AI-generated websites with scroll-driven 3D, video generation, and social media integration",
     ],
   },
   {
@@ -56,11 +59,12 @@ const EXPERIENCE = [
     role: "Software Engineer",
     start: "May 2022",
     end: "2023",
+    location: "South Houston, TX (Remote)",
     bullets: [
-      "Built and maintained a fundraising platform connecting nonprofits with corporate sponsors, processing donations and managing campaign workflows.",
-      "Developed backend services with NestJS and frontend interfaces with React, ensuring type-safe end-to-end data flow.",
-      "Integrated LLM-powered features for content generation and donor engagement analysis.",
-      "Collaborated with product and design to ship user-facing features on aggressive two-week sprint cycles.",
+      "Built and maintained fundraising platform web applications using Node.js, NestJS, React, and Redux",
+      "Improved conversion rates and queue job execution times across the platform",
+      "Integrated LLMs with vector storage for intelligent features",
+      "Worked with SQL databases, SSH, AWS, and Docker in production environments",
     ],
   },
   {
@@ -68,11 +72,13 @@ const EXPERIENCE = [
     role: "Full Stack Developer",
     start: "Dec 2020",
     end: "2022",
+    location: "Houston, TX",
     bullets: [
-      "Developed digital agriculture tools serving farmers and agronomists with real-time field data visualization and decision support.",
-      "Built React and Node.js applications on AWS (Lambda, S3, RDS, CloudFormation) handling high-throughput geospatial data.",
-      "Implemented automated data pipelines for satellite imagery processing and yield prediction models.",
-      "Led frontend architecture decisions and mentored junior developers on React best practices and testing strategies.",
+      "Full stack development on digital agriculture tools using React, Node.js, and AWS",
+      "Managed React applications with Material UI, Recoil, and Redux on the frontend",
+      "Built and maintained Node.js APIs with PostgreSQL databases",
+      "Deployed and managed AWS resources including CloudFormation, S3, and RDS",
+      "Participated in hackathons, contributing ideas and prototypes",
     ],
   },
   {
@@ -80,10 +86,13 @@ const EXPERIENCE = [
     role: "Frontend Developer",
     start: "Apr 2019",
     end: "Oct 2020",
+    location: "Houston, TX",
     bullets: [
-      "Built React applications for oil and gas exploration teams, visualizing well data, production metrics, and geological surveys.",
-      "Developed automated testing bots with Playwright and Puppeteer to regression-test internal dashboards.",
-      "Mentored junior developers through code reviews, pair programming, and internal tech talks on modern frontend practices.",
+      "Built and maintained key React web applications for a 1,000+ employee oil & gas company",
+      "Designed and implemented UI components with React and Material UI",
+      "Led development of automated testing bots using Node.js, Python Flask, and Puppeteer — saving hundreds of hours of manual QA",
+      "Reviewed and created hundreds of pull requests in a collaborative development process",
+      "Mentored junior developers on best practices and code quality",
     ],
   },
   {
@@ -91,19 +100,21 @@ const EXPERIENCE = [
     role: "Technical Coach",
     start: "Aug 2018",
     end: "Oct 2020",
+    location: "Houston, TX",
     bullets: [
-      "Coached cohorts of 15–20 students through full-stack web development curriculum covering JavaScript, React, Ruby on Rails, and SQL.",
-      "Led weekly code reviews and debugging sessions, helping students build production-quality portfolio projects.",
+      "Taught coding fundamentals and web technologies (JavaScript, Ruby, Python, React, Redux, Rails) to career-changing students",
+      "Coached students through complex learning challenges, breaking down abstract concepts into clear explanations",
+      "Adapted teaching approaches based on individual learning patterns and emotional cues",
     ],
   },
 ];
 
 const PROJECTS = [
-  { name: "Resource Realty / 500 Deals", description: "Full-stack real estate technology platform with deal tracking, CRM, automated outreach pipelines, and AI-powered market analysis." },
-  { name: "Hermes Agent", description: "Autonomous AI agent infrastructure with multi-agent orchestration, tool use, and persistent memory across collaborative workflows." },
-  { name: "Review Dashboard", description: "Real-time review system for AI-generated outputs — envelopes, verdicts, and automated application of approved changes." },
-  { name: "Meeting-to-Tasks", description: "Pipeline that ingests meeting transcripts, extracts actionable items with context tagging, and batch-creates structured tasks in Notion." },
-  { name: "Outreach Automation", description: "Automated email and CRM outreach system with lead discovery, contact enrichment, and personalized campaign sequencing." },
+  { name: "Resource Realty / 500 Deals", description: "Real estate deal pipeline with AI-powered candidate scoring, email ingestion, investor matching, and automated deal verification. Cloudflare Workers + D1." },
+  { name: "Hermes Agent", description: "Autonomous agent VM on GCP with SSH access, multi-tool orchestration, and wave-based sub-agent dispatch patterns." },
+  { name: "Review Dashboard", description: "Meeting-to-tasks pipeline with adversarial review and envelope system. Transcription → AI extraction → Notion ingestion → human review → automated actions." },
+  { name: "Meeting-to-Tasks", description: "End-to-end pipeline: audio transcription → context-tagging → task extraction → master JSON draft → review gate → batch Notion creation." },
+  { name: "Outreach Automation", description: "Apollo scraping, Gmail draft creation, and investor/recruiter outreach pipeline with automated contact research." },
 ];
 
 const EDUCATION = [
@@ -133,7 +144,7 @@ function buildHTML() {
     (job) => `
     <div class="entry">
       <div class="l1"><span class="org">${esc(job.company)}</span><span class="date">${esc(job.start)} — ${esc(job.end)}</span></div>
-      <div class="l2"><span>${esc(job.role)}</span></div>
+      <div class="l2"><span>${esc(job.role)}${job.location ? " — " + esc(job.location) : ""}</span></div>
       <ul>
         ${job.bullets.map((b) => `<li>${esc(b)}</li>`).join("\n        ")}
       </ul>
