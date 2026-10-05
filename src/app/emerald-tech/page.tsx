@@ -4,6 +4,7 @@ import ContactForm from "@/components/ContactForm";
 import LogoCloud from "@/components/LogoCloud";
 import JourneyPage from "@/components/JourneyPage";
 import PortfolioCard from "@/components/PortfolioCard";
+import { portfolioEntries } from "@/data/portfolio";
 
 const siteUrl = "https://jordanchristley.com";
 
@@ -86,26 +87,16 @@ export default function EmeraldTechPage() {
           <p className="text-sm uppercase tracking-[0.3em] text-emerald-200/70">
             Portfolio
           </p>
-          <h2 className="mt-3 text-2xl font-semibold">Recent Work</h2>
+          <h2 className="mt-3 text-2xl font-semibold">Selected Work</h2>
           <p className="mt-2 text-sm text-emerald-100/70">
-            Immersive, high-craft projects that demonstrate our approach to
+            Live apps and high-craft projects that demonstrate our approach to
             design, development, and delivery.
           </p>
 
-          <div className="mt-8">
-            <PortfolioCard
-              title="Paw Paradise Journey"
-              description="Scroll-driven journey site for a pet care brand. Built with AI-generated video flythrough, interactive flash cards, and a polished handoff form — all in a single continuous scroll experience."
-              imageSrc="/pawparadise-preview.png"
-              liveUrl="https://pawparadise-journey.higgsfield.app/"
-              tags={[
-                "Next.js",
-                "Framer Motion",
-                "AI Video",
-                "Scroll-Scrub",
-                "Cloudflare Workers",
-              ]}
-            />
+          <div className="mt-8 grid gap-6 md:grid-cols-2">
+            {portfolioEntries.map((entry) => (
+              <PortfolioCard key={entry.title} {...entry} />
+            ))}
           </div>
         </section>
 

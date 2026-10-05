@@ -9,6 +9,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/`, changeFrequency: "daily", priority: 1.0 },
     { url: `${base}/about`, changeFrequency: "monthly", priority: 0.9 },
     { url: `${base}/resume`, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${base}/portfolio`, changeFrequency: "monthly", priority: 0.9 },
     { url: `${base}/emerald-tech`, changeFrequency: "weekly", priority: 0.9 },
     { url: `${base}/services`, changeFrequency: "monthly", priority: 0.9 },
     {
