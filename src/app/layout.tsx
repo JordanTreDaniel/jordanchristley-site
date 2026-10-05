@@ -18,7 +18,7 @@ const nunitoSans = Nunito_Sans({
 const siteUrl = "https://jordanchristley.com";
 
 export const viewport: Viewport = {
-  themeColor: "#071B18",
+  themeColor: "#050a07",
 };
 
 export const metadata: Metadata = {
