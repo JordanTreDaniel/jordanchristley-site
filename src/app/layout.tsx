@@ -25,6 +25,15 @@ export const metadata: Metadata = {
   },
   description:
     "Jordan Christley is a 10+ year self-taught software engineer in Houston, TX building AI tools, web apps, and creative technology through Emerald Technology Consulting.",
+  applicationName: "Jordan Christley",
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any", type: "image/x-icon" },
+      { url: "/icon-192.png", sizes: "192x192", type: "image/png" },
+      { url: "/icon-512.png", sizes: "512x512", type: "image/png" },
+    ],
+    apple: [{ url: "/apple-icon.png", sizes: "180x180", type: "image/png" }],
+  },
   keywords: [
     "AI consultant Houston",
     "AI expert Houston",
@@ -46,21 +55,12 @@ export const metadata: Metadata = {
     title: "Jordan Christley — AI Consultant & Software Engineer in Houston, TX",
     description:
       "Jordan Christley is a 10+ year self-taught software engineer in Houston, TX building AI tools, web apps, and creative technology through Emerald Technology Consulting.",
-    images: [
-      {
-        url: `${siteUrl}/og-image.png`,
-        width: 1200,
-        height: 630,
-        alt: "Jordan Christley — AI Consultant & Software Engineer in Houston, TX",
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Jordan Christley — AI Consultant & Software Engineer in Houston, TX",
     description:
       "Jordan Christley is a 10+ year self-taught software engineer in Houston, TX building AI tools, web apps, and creative technology.",
-    images: [`${siteUrl}/og-image.png`],
     creator: "@jordanchristley",
   },
   robots: {
@@ -99,7 +99,7 @@ export default function RootLayout({
               description:
                 "10+ year self-taught software engineer building AI tools, web apps, and creative technology in Houston, TX.",
               url: siteUrl,
-              image: `${siteUrl}/og-image.png`,
+              image: `${siteUrl}/opengraph-image.png`,
               address: {
                 "@type": "PostalAddress",
                 addressLocality: "Houston",
