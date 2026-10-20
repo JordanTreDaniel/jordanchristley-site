@@ -1,0 +1,8 @@
+# robots.txt for jordanchristley.com
+# Allow all search engines, point to sitemap
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://jordanchristley.com/sitemap.xml

@@ -1,0 +1,230 @@
+{
+  "person": {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Jordan Christley",
+    "jobTitle": "Software Engineer & AI Consultant",
+    "description": "10+ year self-taught software engineer building AI tools, web apps, and creative technology in Houston, TX.",
+    "url": "https://jordanchristley.com",
+    "image": "https://jordanchristley.com/og-image.png",
+    "sameAs": [],
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Houston",
+      "addressRegion": "TX",
+      "addressCountry": "US"
+    },
+    "knowsAbout": [
+      "Artificial Intelligence",
+      "Machine Learning",
+      "Web Development",
+      "Software Engineering",
+      "AI Integration",
+      "Product Strategy",
+      "Full-Stack Development",
+      "React",
+      "Next.js",
+      "TypeScript",
+      "Node.js",
+      "Python"
+    ],
+    "hasOccupation": {
+      "@type": "Occupation",
+      "name": "Software Engineer",
+      "occupationLocation": {
+        "@type": "City",
+        "name": "Houston",
+        "addressRegion": "TX"
+      }
+    }
+  },
+
+  "emeraldTechnology": {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Emerald Technology Consulting",
+    "description": "AI integration, custom web development, and digital transformation for Houston businesses. Product engineering, experience design, and platform hardening.",
+    "url": "https://jordanchristley.com/emerald-tech/",
+    "image": "https://jordanchristley.com/og-emerald.png",
+    "logo": "https://jordanchristley.com/favicon.ico",
+    "founder": {
+      "@type": "Person",
+      "name": "Jordan Christley",
+      "url": "https://jordanchristley.com"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Houston",
+      "addressRegion": "TX",
+      "addressCountry": "US"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 29.7604,
+      "longitude": -95.3698
+    },
+    "areaServed": [
+      {
+        "@type": "City",
+        "name": "Houston",
+        "addressRegion": "TX"
+      },
+      {
+        "@type": "Place",
+        "name": "Midtown Houston"
+      },
+      {
+        "@type": "Place",
+        "name": "Downtown Houston"
+      },
+      {
+        "@type": "Place",
+        "name": "The Heights Houston"
+      },
+      {
+        "@type": "Place",
+        "name": "Montrose Houston"
+      },
+      {
+        "@type": "Place",
+        "name": "Galleria Houston"
+      },
+      {
+        "@type": "Place",
+        "name": "Energy Corridor Houston"
+      },
+      {
+        "@type": "City",
+        "name": "Katy",
+        "addressRegion": "TX"
+      },
+      {
+        "@type": "City",
+        "name": "Sugar Land",
+        "addressRegion": "TX"
+      },
+      {
+        "@type": "City",
+        "name": "The Woodlands",
+        "addressRegion": "TX"
+      },
+      {
+        "@type": "City",
+        "name": "Pearland",
+        "addressRegion": "TX"
+      },
+      {
+        "@type": "City",
+        "name": "Missouri City",
+        "addressRegion": "TX"
+      }
+    ],
+    "serviceType": [
+      "AI Integration",
+      "Custom Web Development",
+      "Product Engineering",
+      "Experience Design",
+      "Platform Hardening",
+      "Digital Transformation",
+      "AI Training",
+      "AI Business Transformation"
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Emerald Technology Services",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "AI Integration",
+            "description": "Modern AI workflows that feel native to your product. Custom AI development for Houston businesses."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Product Engineering",
+            "description": "Launch new web platforms and MVPs with speed and precision."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Experience Design",
+            "description": "High-end UI systems with bold visual direction and polish."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Platform Hardening",
+            "description": "Performance, observability, and security upgrades."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Launch Velocity",
+            "description": "Tight execution cycles with momentum built in."
+          }
+        }
+      ]
+    }
+  },
+
+  "website": {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Jordan Christley",
+    "url": "https://jordanchristley.com",
+    "description": "Jordan Christley — AI Consultant & Software Engineer in Houston, TX",
+    "publisher": {
+      "@type": "Person",
+      "name": "Jordan Christley"
+    }
+  },
+
+  "faq": {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What services does Emerald Technology Consulting offer?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Emerald Technology Consulting offers AI integration, custom web development, product engineering, experience design, platform hardening, and digital transformation services for Houston businesses."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Where is Jordan Christley based?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Jordan Christley is based in Houston, TX and serves businesses throughout the Houston metro area including Midtown, Downtown, The Heights, Montrose, Galleria, Energy Corridor, Katy, Sugar Land, The Woodlands, Pearland, and Missouri City."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is Jordan Christley's background?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Jordan Christley is a 10+ year self-taught software engineer who builds AI tools, web apps, and creative technology. He specializes in modern web products and AI consulting for businesses."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Emerald Technology offer AI training for businesses?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, Emerald Technology Consulting provides AI integration and training services to help Houston businesses adopt and leverage artificial intelligence in their operations."
+        }
+      }
+    ]
+  }
+}
