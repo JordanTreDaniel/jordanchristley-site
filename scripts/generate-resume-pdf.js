@@ -17,7 +17,7 @@ const fs = require("fs");
 const CONTACT = {
   name: "Jordan Christley",
   title: "Full-Stack AI Engineer & Independent Consultant",
-  email: "christleyjordan@protonmail.com",
+  email: "christleyjordan@gmail.com",
   phone: "832-875-6634",
   github: "github.com/JordanTreDaniel",
   website: "jordanchristley.com",
