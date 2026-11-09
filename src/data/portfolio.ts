@@ -8,6 +8,14 @@ export interface PortfolioEntry {
 
 export const portfolioEntries: PortfolioEntry[] = [
   {
+    title: "Blueprints to a build-ready budget",
+    description:
+      "A real residential blueprint set becomes a measured takeoff across 73 line items, with Good, Better, and Best pricing from $88,442 to $234,526 plus a regional adjustment toggle. Switch from the 2D plan to a 3D model, then select a room to inspect its price breakdown.",
+    imageSrc: "/3d-takeoff-preview.png",
+    liveUrl: "https://portfolio.jordanchristley.com/public/3d-takeoff-v1/",
+    tags: ["Residential", "Takeoff", "3D Modeling", "Interactive"],
+  },
+  {
     title: "MMSTR",
     description:
       "Turn-based discussion tool built on Chris Voss's \"Make Me Say That's Right\" negotiation technique. Enforces comprehension before rebuttal — you can't push your point until you've genuinely understood the other side. Built with Next.js + LangChain + SQLite.",

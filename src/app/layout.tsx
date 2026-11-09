@@ -146,7 +146,6 @@ export default function RootLayout({
         />
         {/* Security headers via meta tags */}
         <meta httpEquiv="X-Content-Type-Options" content="nosniff" />
-        <meta httpEquiv="X-Frame-Options" content="DENY" />
         <meta httpEquiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
       </head>
       <body className={`${fredoka.variable} ${nunitoSans.variable} antialiased pt-16 bg-obsidian text-glass-highlight`}>
