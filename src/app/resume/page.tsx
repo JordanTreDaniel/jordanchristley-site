@@ -193,7 +193,7 @@ const CERTIFICATIONS = [
 
 const RESUME_MD = `# Jordan Christley
 
-**Full-Stack AI Engineer & Independent Consultant**
+**Full-Stack AI Engineer — Agentic Systems, RAG & LLM Orchestration**
 
 [GitHub](https://github.com/JordanTreDaniel) · [jordanchristley.com](https://jordanchristley.com)
 
@@ -333,7 +333,7 @@ export default function ResumePage() {
                 Jordan Christley
               </h1>
               <p className="mt-2 text-lg text-emerald-300">
-                Full-Stack AI Engineer &amp; Independent Consultant
+                Full-Stack AI Engineer — Agentic Systems, RAG &amp; LLM Orchestration
               </p>
             </div>
             <div className="flex flex-wrap items-center gap-3">
