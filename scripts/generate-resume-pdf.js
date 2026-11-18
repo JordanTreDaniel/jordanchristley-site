@@ -18,7 +18,7 @@ const CONTACT = {
   name: "Jordan Christley",
   title: "Full-Stack AI Engineer & Independent Consultant",
   email: "christleyjordan@gmail.com",
-  phone: "832-875-6634",
+  phone: "832-324-9066",
   github: "github.com/JordanTreDaniel",
   website: "jordanchristley.com",
 };
