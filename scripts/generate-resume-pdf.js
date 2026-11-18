@@ -16,7 +16,10 @@ const fs = require("fs");
 
 const CONTACT = {
   name: "Jordan Christley",
-  title: "Full-Stack AI Engineer & Independent Consultant",
+  // Source of truth: /Users/jordanc/Documents/jobSearch/resume/jordan-resume-2026.yaml
+  // (header.headline) — must match; this literal silently overwrites the site
+  // headline if it drifts.
+  title: "Full-Stack AI Engineer — Agentic Systems, RAG & LLM Orchestration",
   email: "christleyjordan@gmail.com",
   phone: "832-324-9066",
   github: "github.com/JordanTreDaniel",
